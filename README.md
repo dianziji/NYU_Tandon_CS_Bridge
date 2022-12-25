@@ -1,12 +1,56 @@
-<h1 align="center"> NYU_Tandon_CS_Bridge </h1>
-
- <p align = "center" > I’m currently attending <b>NYU's Tandon Bridge program.</b></p>
+<h1 align="center"> NYU Tandon CS Bridge </h1>
+ <p>
+ <b>Awaiting certification!</b>
  
- I'll be dumping my HW assignments here, as well as coding examples, and practice solutions.
+ Repository for my homework assignments, coding examples, and practice solutions.
 
- I’m currently learning **C++, HTML5, CSS, and Java.**
 
- 📫 How to reach me **oramirezent@gmail.com**
+ 📫 **or2092@nyu.edu**
+ </p>
 
- <h3 align="left">Languages and Tools:</h3>
- <p align="left"> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
+ <h3 align="left">Language(s):</h3>
+  <p align="left"> 
+   <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> 
+   </a> 
+ </p>
+
+<h2 align = "center" >About the Bridge Program</h2>
+<p>The NYU Tandon Bridge course was developed to build foundational skills in those without a technical background in order to prepare for applying to our select STEM graduate programs. Taught by faculty of the NYU Tandon Computer Science department, this 100% online course covers topics that include discrete math, data structures and algorithms, and principles of operating systems. All course instruction is conducted exclusively in English.</p>
+
+<h2 align = "center" >Course Topics</h2>
+<ul>
+<li> Application Layer, Network Layer and Transport Layer </li>
+<li> Arrays </li>
+<li> Branching Statements </li>
+<li> Coding Functions, Abstraction and Runtime stack </li>
+<li> Compilation and Execution process </li>
+<li> Data Types and Expressions </li>
+<li> Discrete Probability </li>
+<li> File Processing </li>
+<li> Fundamentals of System Hardwares </li>
+<li> Induction </li>
+<li> Intro to Algorithm Analysis and Order of Growth </li>
+<li> Intro to OS Concepts </li>
+<li> Introduction to Counting </li>
+<li> Introduction to Networking </li>
+<li> Iterative Statements </li>
+<li> Linked Lists </li>
+<li> Logic </li>
+<li> Mathematical Functions </li>
+<li> Memory Management </li>
+<li> Number Systems </li>
+<li> Object Oriented Programming Concepts </li>
+<li> Overview of OSI/RM </li>
+<li> Physical Layout of Networks </li>
+<li> Pointers and Dynamic Allocation </li>
+<li> Processes & Threads </li>
+<li> Proofs </li>
+<li> Recursion </li> </li>
+<li> Searching and Sorting </li>
+<li> Sets </li> </li>
+<li> Stacks and Queues </li>
+<li> Strings </li>
+<li> Thread Concurrency and Deadlocks </li>
+<li> Trees and Binary Search Trees </li>
+</ul>
