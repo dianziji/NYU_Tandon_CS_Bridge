@@ -16,7 +16,7 @@
  </p>
 
 <h2 align = "center" >About the Bridge Program</h2>
-<p>The NYU Tandon Bridge course was developed to build foundational skills in those without a technical background in order to prepare for applying to our select STEM graduate programs. Taught by faculty of the NYU Tandon Computer Science department, this 100% online course covers topics that include discrete math, data structures and algorithms, and principles of operating systems. All course instruction is conducted exclusively in English.</p>
+<p>The NYU Tandon Bridge course was developed to build foundational skills in those without a technical background in order to prepare for applying to our select STEM graduate programs. The Bridge is a single, non-credit course equivalent to 400 hours of learning, taught by faculty of the NYU Tandon Computer Science department. this 100% online course covers topics that include discrete math, data structures and algorithms, and principles of operating systems. All course instruction is conducted exclusively in English.</p>
 
 <h2 align = "center" >Course Topics</h2>
 <ul>
