@@ -2,8 +2,7 @@
  <p>
  <b>Awaiting certification!</b>
  
- Repository for my homework assignments, coding examples, and practice solutions.
-
+ My homework average was a 97.5, but I've since made a few corrections to several assignments.
 
  📫 **or2092@nyu.edu**
  </p>
