@@ -1,4 +1,3 @@
-// or2092_hw8_q4.cpp :
 #include <iostream>
 #include <cstdlib>
 #include <ctime>

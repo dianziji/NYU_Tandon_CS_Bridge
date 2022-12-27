@@ -1,4 +1,3 @@
-// or2092_hw8_q1.cpp :
 #include <iostream>
 using namespace std;
 
