@@ -1,0 +1,177 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{blkarray, bigstrut}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{array,mathtools}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\newcommand*{\carry}[1][1]{\overset{#1}}
+\newcolumntype{B}[1]{r*{#1}{@{\,}r}}
+\sisetup{
+  exponent-product=\cdot,
+  tight-spacing,
+  per-mode=symbol,
+}
+
+
+\title{\textbf{Homework 5}}
+\author{Oscar Ramirez}
+\date{July 22 2022}
+
+\begin{document}
+\begin{titlepage}   
+
+    \raggedleft % Right align the title page
+
+    \rule{1pt}{\textheight} % Vertical line
+    \hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+    \parbox[b]{0.75\textwidth}{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+        {\large\textit{}}\\[4\baselineskip]
+
+        {\Huge\bfseries Homework 5}\\[2\baselineskip] % Title
+
+        {\Large\textsc{Oscar Ramirez}} % Author name, lower case for consistent small caps
+
+        \vspace{0.47\textheight} % Whitespace between the title block and the publisher
+        {\noindent Questions 3-5}\\[0.1\baselineskip]
+        {\noindent NYU Tandon CS Extended Bridge Summer 2022}\\[0.1\baselineskip]
+        {\noindent NetID: or2092}\\[\baselineskip]
+    }
+
+\end{titlepage}
+\newpage
+
+\noindent \textbf{\underline{Question 3:}}\\
+\textbf{Exercise 4.1.3}\\
+\textbf{(b)} $f(x) = \frac{1}{x^2 - 4}$\\
+\break
+$f$ is not a well defined function for $x = 2$ and $x = -2$.\\
+\break
+\textbf{(c)} $f(x) = \sqrt{x^2}$\\
+\break
+$R = [0, \infty)$\\
+The range for this function is from 0 to positive infinity, or $y \geq 0$. Since plugging in 0 yields 0, and plugging in both negative and positive numbers yields a positive number of the same magnitude.\\
+\break
+\textbf{Exercise 4.1.5}\\
+(b) $R = \{4, 9, 16, 25\}$\\
+The range for f(x) with domain A, is found by plugging in each element of A into f(x). 2, 3, 4, 5 squared is 4, 9, 16, 25 respectively.\\
+\break
+(d) $R = \{0, 1, 2, 3, 4, 5\}$\\
+The range of f(x) is the set of the number of 1's that occur in x. 00001, 10000, and 00100 all have one 1, so instead we'll only look at elements with different amounts of 1. For example, 00000, 00001, 00011, 00111, 01111, and 11111. So the range is [0, 5].\\
+\break
+(h) $R = \{(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)\}$\\
+The range is the set A, squared.\\
+\break
+(i) $R = \{(1, 2), (1, 3), (1, 4), (2, 2), (2, 3), (2, 4), (3, 2), (3, 3), (3, 4)\}$\\
+The range is the same as the previous problem, except that we add 1 to y.\\
+\break
+(l) $R = \{\emptyset, \{2\}, \{3\}, \{2, 3\}\}$\\
+The range is a set containing the elements of P(A) after subtracting \{1\}.\\
+\break
+\newpage
+\noindent \textbf{\underline{Question 4:}}\\
+\textbf{ Exercise 4.2.2}\\
+\textbf{(c)} \textbf{One-to-one, but not onto.}\\ Y is not defined for any integers between the perfect cubes. 2, 3, 4, 5, 6, 7 are all examples.\\ 
+\break
+\textbf{(g)} \textbf{One-to-one, but not onto.}\\ There is no input for y that would yield an odd integer.\\
+\break
+\textbf{(k)} \textbf{Neither one-to-one, nor onto.}\\ (1,8) and (2,6) are both 10. There is no input for (x,y) that yields a 1.\\
+\break
+\break
+\textbf{Exercise 4.2.4}\\
+\textbf{(b)} \textbf{Neither one-to-one, nor onto.} $f(101) = f(001) = 101$. There is no input that would yield a string with 0 as the first bit. $f(x) \neq 000, 001, 010, 011$.\\
+\break
+\textbf{(c)} \textbf{Both one-to-one and onto.} All input yields a different output, and there are no elements in the target/co-domain that are not in the range.\\
+\break
+\textbf{(d)} \textbf{One-to-one, but not onto.} There is no input that yields an output where the first and last bit are the same. For example, 0001 and 1000 are not in the range.\\
+\break
+\textbf{(g)} \textbf{Neither one-to-one, nor onto.} $f(\{2, 3\}) = f(\{1, 2, 3\})$. There is no input that yields a subset of A that contains 1 as an element.\\
+\break
+\noindent \textbf{II.}\\
+\textbf{a)} \[f(x) = x^3\]
+\centerline{$x$ targets a different $y$ for all integers,} \\
+\centerline{but not all members of $\mathbb{Z}^+$ are in the range, for example $y = 3$.}\\
+\break
+\textbf{b)} \[f(x) = |x| + 1\]
+\centerline{All members of $\mathbb{Z}^+$ are in the range. f(-1) = f(1) = 2.}\\
+\break
+\textbf{c)} \[f(x) = x + 1\]
+\centerline{All x leads to a different y, and y is defined for all positive integers.}\\
+\break
+\textbf{d)} \[f(x) = x^2 - 6\]
+\centerline{$f(3) = f(-3)$, and $f(1) = -5$.}\\
+\break
+\newpage
+\noindent \textbf{\underline{Question 5:}}\\
+\textbf{Exercise 4.3.2}\\
+\textbf{(c)}\\
+\centerline{$f$ is a bijection, so it has a well defined inverse.}\\
+\centerline{$f^-1 (x) = \frac{x - 3}{2}$}\\
+\break
+\textbf{(d)}\\
+\centerline{$f$ does not have a well defined inverse because $f$ is not one-to-one.}
+\[f(\{1, 2\}) = f(\{4, 5\})\]
+\textbf{(g)}\\
+\centerline{$f$ is a bijection and therefore does have a well defined inverse.}\\
+\centerline{The output of $f^-1$ is obtained by taking the input string and reversing the bits.}\\
+\break
+\textbf{(i)}\\
+\centerline{$f$ is a bijection and therefore has an inverse function.}
+\[f^-1 (x, y) = (x - 5, y + 2)\]
+\break
+\textbf{Exercise 4.4.8}\\
+(c) $f \circ h = \mathbf{2x^2 + 5}$\\
+Plugging h into f yields $f \circ h = 2(x^2 + 1) + 3 = 2x^2 + 2 + 3 = 2x^2 + 5$.\\
+\break
+(d) $h \circ f = \mathbf{4x^2 + 12x + 10}$\\
+Plugging f into h yields $f \circ h = (2x + 3)^2 + 1 = 4x^2 + 6x + 6x + 9 + 1 = 4x^2 + 12x + 10$.\\
+\break
+\textbf{Exercise 4.4.2:} \\
+Consider three functions f, g, and h, whose domain and target are Z. Let
+\[f(x) = x^2   \qquad     g(x) = 2^x   \qquad   h(x) = \ceil[\big]{\frac{x}{5}}\]
+(b) $(f \circ h)(52) = \mathbf{121}$\\
+\[(f \circ h)(52) = f(h(52)) = f(\ceil[\big]{\frac{52}{5}}) = f(11)\]
+\[f(11) = (11)^2 = 121\]
+\break
+(c) $(g \circ h \circ f)(4) = \mathbf{16}$\\
+\[f(4) = (4)^2 = 16\]
+\[h(16) = \ceil[\big]{\frac{16}{5}} = 4\]
+\[g(4) = 2^{(4)} = 16\]
+\break
+(d) $h \circ f = \mathbf{\ceil[\big]{\frac{x^2}{5}}}$\\
+\[f(x) = x^2\]
+\[h(f(x)) = \ceil[\big]{\frac{(x^2)}{5}}\]
+\break
+\textbf{Exercise 4.4.6}\\
+(c) $(h \circ f)(010) = \mathbf{111}$\\
+\[f(010) = 110\]
+\[h(110) = 111\]
+\break
+(d) Range $h \circ f = \mathbf{\{101, 111\}}$\\
+\[\text{Range of} \quad f(x) = \{100, 101, 110, 111\}\]
+\[\text{Range of} \quad h(f(x)) = \{101, 111\}\]
+\break
+(e) Range of $g \circ f = \mathbf{\{001, 101, 011, 111\}}$\\
+\[\text{Range of} \quad f(x) =  \{100, 101, 110, 111,\}\]
+\[\text{Range of} \quad g(f(x)) = \{001, 101, 011, 111\}\]
+\break
+\newpage
+\noindent\textbf{Extra Credit: Exercise 4.4.4}\\
+Let $f$: $X \to Y$ and g: $Y \to Z$ be two functions.\\
+\break
+\noindent(c)\\
+No, it is not possible for $g \circ f$ to be one-to-one if $f$ is not one-to-one. If $f$ is not one-to-one, that means that there exists two x values $x_{1} \in X$ and $x_{2} \in X$ such that, $x_{1} \neq x_{2}$, $x_{1} \to y_{1} \in Y$, and $x_{2} \to y_{1} \in Y$. So if $f(x_{1}) = f(x_{2}) = y_{1}$, then $g(f(x_{1})) = g(f(x_{2})) = g(y_{1}) = z_{1}$, where $z_{1} \in Z$. And since there are two y values that go to the same target, then the composition of the two functions is also not one to one.\\
+\break
+\noindent(d)\\
+No, it is not possible for $g \circ f$ to be one-to-one if $g$ is not one-to-one. If $f$ is one-to-one, then every element of the domain is mapped to a different element in the range, but if $g$ is not one-to-one, that means that there exists two y values in $y_{1}$ and $y_{2}$ such that, $y_{1} \neq y_{2}$, $y_{1} \to z_{1}$, and $y_{2} \to z_{1}$. So, since $y_{1} \to z_{1}$ and $y_{2} \to z_{1}$, $g \circ f$ cannot be one-to-one.
+
+\end{document}

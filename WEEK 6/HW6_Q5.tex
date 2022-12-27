@@ -1,0 +1,94 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{blkarray, bigstrut}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{array,mathtools}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\newcommand*{\carry}[1][1]{\overset{#1}}
+\newcolumntype{B}[1]{r*{#1}{@{\,}r}}
+\sisetup{
+  exponent-product=\cdot,
+  tight-spacing,
+  per-mode=symbol,
+}
+
+
+\title{\textbf{Homework 5}}
+\author{Oscar Ramirez}
+\date{July 22 2022}
+
+\begin{document}
+\begin{titlepage}   
+
+    \raggedleft % Right align the title page
+
+    \rule{1pt}{\textheight} % Vertical line
+    \hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+    \parbox[b]{0.75\textwidth}{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+        {\large\textit{}}\\[4\baselineskip]
+
+        {\Huge\bfseries Homework 6}\\[2\baselineskip] % Title
+
+        {\Large\textsc{Oscar Ramirez}} % Author name, lower case for consistent small caps
+
+        \vspace{0.47\textheight} % Whitespace between the title block and the publisher
+        {\noindent Question 5}\\[0.1\baselineskip]
+        {\noindent NYU Tandon CS Extended Bridge Summer 2022}\\[0.1\baselineskip]
+        {\noindent NetID: or2092}\\[\baselineskip]
+    }
+
+\end{titlepage}
+\newpage
+
+\noindent \textbf{\underline{Question 5:}}\\
+Use the definition of $\theta$ in order to show the following:\\
+a. $5n^3 + 2n^2 + 3n$ = $\theta(n^3)$\\
+\break
+Proof:\\
+\centerline{Let $f(n) = 5n^3 + 2n^2 + 3n$ and $g(n) = (n^3)$, }\\
+\centerline{we will prove that $c_{2} * g(n) \leq f(n) \leq c_{1} * g(n)$ for any $n_{0} \geq 1$. }\\
+\break
+\centerline{For any $n \geq 1$, we know that $5n^3 \leq 5n^3 + 2n^2 + 3n$.}\\
+\centerline{So if we take $c_{2} = 5$, and $n_{0} = 1$, then $5n^3 \leq 5n^3 + 2n^2 + 3n$.}\\ 
+\centerline{\textbf{Therefore, } $\mathbf{5 * g(n) \leq f(n)}$ \textbf{ and } $\mathbf{f = \Omega(g)}$}\\
+\break
+\centerline{For any $n \geq 1$, we know that $n^2$ and $n^3$ are larger than n.}\\
+\centerline{So, we know that $5n^3 + 2n^2 + 3n \leq 5n^3 + 2n^3 + 3n^3$.}\\
+\centerline{So if we take $c_{1} = 10$ and $n_{0} = 1$, then $5n^3 + 2n^2 + 3n \leq 10n^3$.}\\
+\centerline{\textbf{Therefore,} $\mathbf{f(n) \leq 10 * g(n)}$ \textbf{and} $\mathbf{f = O(g)}$}\\
+\break
+\centerline{There for if we take $c_{1} = 10$, $c_{2} = 5$ and $n_{0} = 1$, }\\
+\centerline{then for all $n \geq n_{0}$, $f = O(g)$ and $f = \Omega (g)$,}\\
+\centerline{\textbf{Therefore,} $\mathbf{f = \theta(g) = \theta(n^3)}$}\\
+\newpage
+\noindent\textbf{b.} $\sqrt{7n^2 + 2n - 8}$ = $\theta(n)$\\
+\break
+\break
+Proof:\\
+\centerline{Let $f(n) = \sqrt{7n^2 + 2n - 8}$ and $g(n) = (n)$, }\\
+\centerline{we will prove that $c_{2} * g(n) \leq f(n) \leq c_{1} * g(n)$ for any $n_{0} \geq ?$. }\\
+\break
+\centerline{Using the expression $7n^2 + 2n - 8$, we can see that $7n^2 \leq 7n^2 + 2n - 8$,}\\
+\centerline{when $2n - 8 \geq 0$. This gives us $n_{0} = \sqrt{4} = 2$. So we take $c_{2} = \sqrt{7n^2}$}.\\
+\centerline{and round $\sqrt{7}$ down to 2 and take $c_{2} = 2$. So, for all $n \geq 2$, $2n \leq  \sqrt{7n^2 + 2n - 8}$.}
+\centerline{\textbf{Therefore, } $\mathbf{2 * g(n) \leq f}$ \textbf{ and } $\mathbf{f = \Omega(g)}$}\\
+\break
+\centerline{Using the expression $7n^2 + 2n - 8$, we know that $7n^2 + 2n - 8 \leq 7n^2 + 2n^2$.}\\
+\centerline{So, we know that $7n^2 + 2n - 8 \leq 9n^2$. $\sqrt{9n^2}$ gives us $3n$.}\\
+\centerline{So if we take $c_{1} = 3$ and $n_{0} = 2$, then $\sqrt{7n^2 + 2n - 8} \leq 3n$.}\\
+\centerline{\textbf{Therefore,} $\mathbf{f(n) \leq 3 * g(n)}$ \textbf{and} $\mathbf{f = O(g)}$}\\
+\break
+\centerline{There for if we take $c_{1} = 3$, $c_{2} = 2$ and $n_{0} = 2$, }\\
+\centerline{then for all $n \geq n_{0}$, $f = O(g)$ and $f = \Omega (g)$,}\\
+\centerline{\textbf{Therefore,} $\mathbf{2 * g(n) \leq f \leq 3 * g(n)}$ and $\mathbf{f = \theta(g) = \theta(n)}$}\\
+\end{document}
