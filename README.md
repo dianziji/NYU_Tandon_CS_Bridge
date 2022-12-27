@@ -1,8 +1,6 @@
 <h1 align="center"> NYU Tandon CS Bridge </h1>
  <p>
  <b>Awaiting certification!</b>
- 
- My homework average was a 97.5, but I've since made a few corrections to several assignments.
 
  📫 **or2092@nyu.edu**
  </p>
