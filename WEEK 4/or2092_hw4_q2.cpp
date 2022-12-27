@@ -1,5 +1,3 @@
-// or2092_hw4_q2.cpp:
-
 #include <iostream>
 #include <string>
 using namespace std;

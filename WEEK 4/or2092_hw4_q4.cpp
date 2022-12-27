@@ -1,5 +1,3 @@
-// or2092_hw4_q4.cpp: 
-
 #include <iostream>
 #include <cmath>
 using namespace std;
