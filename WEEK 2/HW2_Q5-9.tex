@@ -1,0 +1,345 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{blkarray, bigstrut}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{array,mathtools}
+\newcommand*{\carry}[1][1]{\overset{#1}}
+\newcolumntype{B}[1]{r*{#1}{@{\,}r}}
+\sisetup{
+  exponent-product=\cdot,
+  tight-spacing,
+  per-mode=symbol,
+}
+
+
+\title{\textbf{Homework 2}}
+\author{Oscar Ramirez}
+\date{July 22 2022}
+
+\begin{document}
+\begin{titlepage}   
+
+    \raggedleft % Right align the title page
+
+    \rule{1pt}{\textheight} % Vertical line
+    \hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+    \parbox[b]{0.75\textwidth}{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+        {\large\textit{}}\\[4\baselineskip]
+
+        {\Huge\bfseries Homework 2}\\[2\baselineskip] % Title
+
+        {\Large\textsc{Oscar Ramirez}} % Author name, lower case for consistent small caps
+
+        \vspace{0.47\textheight} % Whitespace between the title block and the publisher
+        {\noindent NYU Tandon CS Bridge Summer 2022}\\[0.1\baselineskip]
+        {\noindent NetID: or2092}\\[\baselineskip]
+    }
+
+\end{titlepage}
+\newpage
+
+\noindent \textbf{\underline{Question 5:}}\\
+\textbf{a) Solve the following questions from the Discrete Math zyBook:}\\
+\break
+\noindent \textbf{1. Exercise 1.12.2 - Proving arguments are valid using rules of inference.}\\
+Use the rules of inference and the laws of propositional logic to prove that each argument is valid. Number each line of your argument and label each line of your proof "Hypothesis" or with the name of the rule of inference used at that line. If a rule of inference is used, then include the numbers of the previous lines to which the rule is applied.\\
+\break
+\textbf{(b)}
+\begin{gather*}
+p \to (q \land r)\\
+\underline{\qquad \neg{q} \qquad}\\
+\therefore \neg{p}\\
+\end{gather*}
+\begin{align*}
+1) & \quad \neg{q} & \text{Hypothesis & \quad \ \ }\\
+2) & \quad \neg{q} \lor \neg{r} & \text{Addition \ & \ \ 1}\\
+3) & \quad \neg{(}q \land r) & \text{De Morgan's Law \ & \ \ 2}\\
+4) & \quad p \to (q \land r) & \text{Hypothesis \ & \ \ 3}\\
+5) & \quad \neg{p} & \text{Modus Tollens \ &2, 3}\\
+\end{align*}
+\noindent (e)
+\begin{gather*}
+\ p \lor q\\
+\neg{p}  \lor r\\
+\underline{\qquad \neg{q}\qquad }\\
+\qquad \therefore  r\qquad\\
+\end{gather*}
+\begin{align*}
+1) & \quad p \lor q & \text{Hypothesis & \quad \ \ }\\
+2) & \quad q \lor p & \text{Commutative Law & \quad 1}\\
+3) & \quad \neg{q} & \text{Hypothesis & \quad \ \ }\\
+4) & \quad p & \text{Disjunctive Syllogism & 2, 3}\\
+5) & \quad \neg{p} \lor r & \text{Hypothesis & \quad \ \ }\\
+6) & \quad r & \text{Disjunctive Syllogism & 4, 5}
+\end{align*}
+\newpage
+\noindent \textbf{2. Exercise 1.12.3 - Proving the rules of inference using other rules.}\\
+\break
+\noindent(c) One of the rules of inference is Disjunctive syllogism :\\
+\begin{align*}
+p \lor q\quad \ \\
+\underline{\qquad\neg{p}\qquad}\\
+\therefore q\quad \ \
+\end{align*}
+\begin{align*}
+1) & \quad p \lor q & \text{Hypothesis & \quad \ \ }\\
+2) & \quad \neg{p} \to q & \text{Conditional Identity & \quad 1}\\
+3) & \quad \neg{p} & \text{Hypothesis & \quad \ \ }\\
+4) & \quad q & \text{Modus Ponens & 2, 3}\\
+\end{align*}
+\noindent \textbf{3. Exercise 1.12.5 - Proving arguments in English are valid or invalid.}\\
+Give the form of each argument. Then prove whether the argument is valid or invalid. For valid arguments, use the rules of inference to prove validity.\\
+\textbf{(c)}\\
+\[\text{I will buy a new car and a new house only if I get a job. }\]
+\[\text{\underline{\qquad\qquad \qquad I am not going to get a job.\qquad \qquad\qquad}}\]
+\[\therefore \text{I will not buy a new car. }\]
+Form:
+\[(c \land h) \to j\]
+\[\underline{\qquad\neg{j}\qquad}\]
+\[\neg{c}\]
+\begin{displaymath}
+\begin{array}{|c c c|c|c|c|}
+\hline
+c & h  & j & (c \land h) \to j & \neg{j} & \neg{c}\\ 
+\hline 
+T & T & T & T & F & F\\
+T & T & F & F & T & F\\
+T & F & T & T & F & F\\
+T & F & F & \textbf{\text{\textcolor{red}{T}}} & \textbf{\text{\textcolor{red}{T}}} & \textbf{\text{\textcolor{red}{F}}}\\
+F & T & T & T & F & T\\
+F & T & F & \textbf{\text{\textcolor{teal}{T}}} & \textbf{\text{\textcolor{teal}{T}}} & \textbf{\text{\textcolor{teal}{T}}}\\
+F & F & T & T & F & T\\
+F & F & F & \textbf{\text{\textcolor{teal}{T}}} & \textbf{\text{\textcolor{teal}{T}}} & \textbf{\text{\textcolor{teal}{T}}}\\
+\hline
+\end{array}
+\end{displaymath}\\
+The argument is \textbf{invalid} due to the 4th row; both hypotheses are true, but the conclusion is false.\\
+\newpage
+\noindent \textbf{(d)}\\
+\[\text{I will buy a new car and a new house only if I get a job.}\]
+\[\text{I am not going to get a job.}\]
+\[\text{\underline{\qquad\qquad I will buy a new house.\qquad\qquad}}\]
+\[\therefore \text{I will not buy a new car.}\]
+Form:
+\[(c \land h) \to j\]
+\[\neg{j}\]
+\[\underline{\qquad h\qquad}\]
+\[\neg{c}\]
+\begin{align*}
+1) & \quad (c \land h) \to j & \text{Hypothesis &\qquad}\\
+2) & \quad \neg{j} & \text{Hypothesis &\qquad}\\
+3) & \quad \neg{(}c \land h) & \text{Modus Tollens & 1, 2}\\
+4) & \quad \neg{c} \lor \neg{h} & \text{De Morgan's Law &\quad \ \ 3}\\
+5) & \quad h & \text{Hypothesis &\qquad}\\
+6) & \quad \neg{c} & \text{Disjunctive Syllogism & 4, 5}
+\end{align*}
+\noindent \textbf{b) Solve the following questions from the Discrete Math zyBook:}\\
+\break
+\noindent \textbf{1. Exercise 1.13.3}\\
+\textbf{(b)} Show that the given argument is invalid by giving values for the predicates P and Q over the domain {a, b}.\\
+\[\exists x\ (P(x) \lor Q(x))\]
+\[\underline{\quad\exists x\ \neg{Q}(x)\quad}\]
+\[\therefore \exists x\ P(x)\]
+\begin{displaymath}
+\begin{array}{|c|c c|}
+\hline
+ & P  & Q\\ 
+\hline 
+a & F & T \\
+b & F & F \\
+\hline
+\end{array}
+\end{displaymath}\\
+Using the domain {a, b}, we can see that the first hypothesis is true due to x = a, and the second hypothesis is true due to x = b, but the conclusion is false for x = a and x = b. Therefore the argument is invalid.\\
+\newpage
+\noindent \textbf{2. Exercise 1.13.5}\\
+Prove whether each argument is valid or invalid. First find the form of the argument by defining predicates and expressing the hypotheses and the conclusion using the predicates. If the argument is valid, then use the rules of inference to prove that the form is valid. If the argument is invalid, give values for the predicates you defined for a small domain that demonstrate the argument is invalid.\\
+The domain for each problem is the set of students in a class.\\
+\textbf{(d)}
+\[\text{Every student who missed class got a detention}\]
+\[\text{Penelope (P) is a student in the class}\]
+\[\text{\underline{\qquad Penelope did not miss class\qquad}}\]
+\[\text{$\therefore$ Penelope did not get a detention}\]
+D(x): x got detention\\
+M(x): x missed class\\
+\begin{align*}
+\forall x\ D(x) \to M(x)\qquad\quad\\
+\text{Penelope, a stu&dent in the class}\\
+\underline{\quad\qquad\neg M(Penelope)\qquad\qquad}\\
+\neg D(Penelope)\qquad\qquad\\
+\end{align*}
+\begin{align*}
+1) & \quad \forall x\ D(x) \to M(x) & \text{Hypothesis &\qquad}\\
+2) & \quad \text{Penelope is a student in the class} & \text{Hypothesis &\qquad}\\
+3) & \quad D(P) \to M(P) & \text{Universal Instantiation & 1, 2}\\
+4) & \quad \neg M(P) & \text{Hypothesis &\qquad}\\
+5) & \quad \neg D(P) & \text{Modus Tollens & 3, 4}\\
+\end{align*}
+\newpage
+\noindent \textbf{(e)}
+\[\text{Every student who missed class or got a detention did not get an A}\]
+\[\text{Penelope (P) is a student in the class}\]
+\[\text{\underline{\qquad Penelope got an A\qquad}}\]
+\[\text{$\therefore$ Penelope did not get a detention}\]
+D(x): x got detention\\
+M(x): x missed class\\
+A(x): x got an A\\
+\[ \forall x\ ((D(x)\lor M(x)) \to \neg A(x))\]
+\[ \text{Penelope (P) is a student in the class}\]
+\[ \underline{\qquad\neg A(Penelope)\qquad}\]
+\[ \neg D(Penelope)\]
+\begin{align*}
+1) & \quad \forall x\ ((D(x)\lor M(x)) \to \neg A(x)) & \text{Hypothesis &\qquad}\\
+2) & \quad \text{Penelope is a student in the class} & \text{Hypothesis &\qquad}\\
+3) & \quad (D(P)\lor M(P)) \to \neg A(P) & \text{Universal Instantiation & 1, 2}\\
+4) & \quad \neg (M(P)\lor D(P))\lor \neg (A(P) & \text{Conditional Identity & 3\quad \ }\\ 
+5) & \quad (\neg M(P)\land \neg D(P)) \lor \neg A(P) & \text{De Morgan's Law & 4\quad \ }\\
+6) & \quad A(P) & \text{Hypothesis &\qquad}\\
+7) & \quad \neg M(P)\land \neg D(P) & \text{Disjunctive Syllogism & 5, 6}\\
+8) & \quad \neg D(P)\land \neg M(P) & \text{Commutative Law & 7\quad \ }\\
+9) & \quad \neg D(P) & \text{Simplification & 8\quad \ }\\
+\end{align*}
+\newpage
+\noindent \textbf{\underline{Question 6:}}\\
+\noindent \textbf{Exercise 2.4.1}\\
+\textbf{(d)} The product of two odd integers is an odd integer.
+\begin{align*}
+\text{Proof} &\\
+1) & \quad \text{Let } x \text{ and } y \text{ be two odd integers. We will prove that } xy \text{ is an odd integer.}\\
+2) & \quad \text{Since } x \text{ is an odd integer, } x = 2k + 1 \text{ for some integer } k\text{.} \\
+&\quad \text{Since } y \text{ is an odd integer, } y = 2t + 1 \text{ for some integer } t\text{.}\\
+3) & \quad \text{Plugging in } 2k+1 \text{ for } x\text{ , and } 2t + 1 \text{ for } y\text{ , we get } xy = (2k + 1)(2t + 1)\text{.} \\
+4) & \quad (2k + 1)(2t + 1) \text{ is equal to } 4kt + 2k+ 2t + 1 = 2(2kt + k + t) + 1\text{.}\\
+5) & \quad \text{ Since } k \text{ and } t \text{ are both integers, } 2(2kt + k + t) \text{ is also an integer. }\\
+6) & \quad \text{ Therefore, } xy \text{ is an odd integer. } \blacksquare\\
+\end{align*}
+\noindent \textbf{Exercise 2.4.3}\\
+\textbf{(b)} If $x$ is a real number and $x \leq 3$, then $12 - 7x + x^2 \geq 0$.\\
+\begin{align*}
+\text{Proof} &\\
+1) & \quad \text{Let } x \text{ be a positive real number that is less than or equal to 3.}\\
+   & \quad \text{We will prove that } 12-7x-x^2 \geq 0 \text{.}\\
+2) & \quad \text{Since } x \text{ is a real number less than or equal to 3,}\\ 
+   & \quad \text{then subtracting } x\text{ from both sides yields } 0 \leq 3 - x \text{, or } 3 - x \geq 0\text{.} \\
+3) &\quad \text{If } x \geq 0 \text{, then } x + 1 \geq x \geq 0 \text{. Therefore, } 4-x \geq 3 - x \geq 0\text{.}\\
+4) & \quad \text{Since } 3-x \text{ is at least } 0  \text{ and } 4 - x \text{ is at least } 0 \text{, then } (4 - x)(3 - x) \geq 0 \text{.} \\
+5) & \quad (4 - x)(3 - x) \text{ gives } 12-4x-3x-x^2\text{, which simplifies to } 12-7x-x^2 \text{.}\\
+6) & \quad \text{Therefore, } 12-7x-x^2 \geq 0 \text{. } \blacksquare\\
+\end{align*}
+\newpage
+\noindent \textbf{\underline{Question 7:}}\\
+\noindent \textbf{Exercise 2.5.1}\\
+\textbf{(d)} For every integer $n$, if $n^2 - 2n + 7$ is even, then $n$ is odd.\\
+Contrapositive: If $n$ is even, then $n^2 - 2n + 7$ is odd\\
+\begin{align*}
+\text{Proof} &\\
+1) & \quad \text{Let $n$ be an even integer. We will prove that $n^2 - 2n + 7$ is odd.}\\
+2) & \quad \text{Since $n$ is an even integer, then $n = 2k+1$ for some integer k.}\\
+3) & \quad \text{Plugging in for n, $n^2 - 2n + 7 = (2k+1)^2 - 2(2k+1) + 7$.}\\
+   & \quad \text{$(2k+1)^2 - 2(2k+1) + 7$ is equal to $4k^2 - 4k + 7$,} \\
+   & \quad \text{which can be represented as $2(2k^2-2k+3) + 1$}\\
+4) & \quad \text{Since k is an integer, then $2k^2-2k+3$ is also an integer.}\\
+5) & \quad \text{Therefore, $n^2 - 2n + 7$ is odd. } \blacksquare\\
+\end{align*}
+\noindent \textbf{Exercise 2.5.4}\\
+\textbf{(a)} For every pair of real numbers $x$ and $y$, if $x^3 + xy^2 \leq x^2y + y^3$, then $x \leq y$.\\
+\break
+Contrapositive: If $x > y$, then $x^3 + xy^2 > x^2y + y^3$.
+\begin{align*}
+\text{Proof} &\\
+1) & \quad \text{Let $x$ and $y$ be a pair of real numbers where $x > y$. }\\
+   & \quad \text{We will prove that $x^3 + xy^2 > x^2y + y^3$.}\\
+2) & \quad \text{By shifting everything to the left side of the inequality we are left with}\\
+   & \quad \text{$x^3 + xy^2 - x^2y - y^3 > 0$}\\ 
+3) & \quad \text{Starting with $x > y$, we can subtract $y$ to get $x - y > 0$.}\\    & \quad \text{We can then multiply both sides by $(x^2 + y^2)$}\\  
+3) & \quad \text{$(x-y)(x^2 + y^2) = x^3 + xy^2 - x^2y - y^3$ which gives us $x^3 + xy^2 - x^2y - y^3 > 0$.}\\
+4) & \quad \text{By adding $x^2y$ and $y^3$ to both sides, we end up with $x^3 + xy^2 > x^2y + y^3$}\\
+5) & \quad \text{Therefore, $x^3 + xy^2 > x^2y + y^3$. } \blacksquare\\
+\end{align*}\\
+\newpage
+\noindent \textbf{(b)} For every pair of numbers $x$ and $y$, if $x + y > 20$, then $x > 10$ or $y > 10$.\\
+\break
+Contrapositive: If $x \leq 10 \land y \leq 10$, then $x + y \leq 20$.
+\begin{align*}
+\text{Proof} &\\
+1) & \quad \text{Let $x$ and $y$ be a pair of real numbers that are both equal to or less than 10.}\\
+   & \quad \text{We will prove that $x + y \leq 20$.}\\
+2) & \quad \text{Since $(x \leq k) + (y \leq k)$ is equal to $x + y \leq 2k$,}\\
+   & \quad \text{then $(x \leq 10) + (y \leq 10) = x + y \leq 2(10)$}\\
+2) & \quad \text{$x + y \leq 2(10)$ simplifies to $x + y \leq 20$}\\  
+3) & \quad \text{Therefore, $x + y \leq 20$. } \blacksquare\\
+\end{align*}\\\\
+\noindent \textbf{Exercise 2.5.5}\\
+\textbf{(c)} For every non-zero real number $x$, if $x$ is irrational, then $\frac{1}{x}$ is also irrational.\\
+\break
+Contrapositive: If $\frac{1}{x}$ is rational, then $x$ is also rational.\\
+\begin{align*}
+\text{Proof} &\\
+1)  & \quad \text{Let $\frac{1}{x}$ be a non-zero real number that is rational.}\\
+    & \quad \text{We will prove that $x$ is also rational.}\\
+2)  & \quad \text{Since $\frac{1}{x}$ is rational, then $1/x = a/b$ where $a$ and $b$ are both integers,}\\
+    & \quad \text{and $b \neq 0$.}\\
+3)  & \quad \text{Since $\frac{1}{x} = \frac{a}{b}$, then $x = \frac{b}{a}$ and can be represented by a ratio of two integers}\\
+    & \quad \text{where the denominator is not equal to 0.}\\
+4)  & \quad \text{Therefore $x$ is also a rational number. } \blacksquare\\
+\end{align*}
+\newpage
+\noindent \textbf{\underline{Question 8:}}\\
+\noindent \textbf{Exercise 2.6.6: Proofs by contradiction.}\\
+\textbf{Give a proof for each statement.}\\
+\textbf{(c)} The average of three real numbers is greater than or equal to at least one of the numbers.\\
+\break
+$\neg$ Theorem: There exists three real numbers $x$, $y$, $z$ such that the average of the 3 numbers is less than each of the numbers.\\
+\begin{align*}
+\text{Proof} &\\
+1)\quad& \quad \text{Let $x$, $y$, and $z$ be three real numbers. We will prove that the average }\\
+  \quad& \quad \text{of these 3 numbers is less than each individual number.}\\
+2)\quad& \quad \text{The average of the three numbers $x$, $y$, and $z$ can be }\\
+  \quad& \quad \text{represented as } \frac{x + y + z}{3} = w. \text{ So, }(w < x)\land (w < y) \land (w < z) \text{.}\\
+3)\quad& \quad \text{By adding all the inequalities we get $3w < x + y + z$.}\\
+4)\quad& \quad \text{By substituting $\frac{x + y + z}{3}$ for $w$ we }\\
+    \quad& \quad \text{get $3(\frac{x + y + z}{3}) < x + y + z$ .}\\
+5)\quad& \quad \text{This leads to a contradiction as $x$ + $y$ + $z$ can not be less than $x$ + $y$ + $z$. } \blacksquare\\
+\end{align*}
+\break
+\textbf{(d)} There is no smallest integer.\\
+\break
+$\neg$ Theorem: There is a smallest integer.
+\begin{align*}
+    \text{Proof} &\\
+    1) & \quad \text{Let $s$ be the smallest integer. We will prove that there is no integer smaller than s.}\\
+    2) & \quad \text{If s is an integer, then $s - 1$ is also an integer.}\\
+    3) & \quad \text{Since $s-1 < s$, there is an integer that is smaller than s.}\\
+    4) & \quad \text{This leads to a contradiction with the assumption that s is the smallest integer. }\blacksquare\\
+\end{align*}
+\newpage
+\noindent \textbf{\underline{Question 9:}}\\
+\noindent \textbf{Exercise 2.7.2:}\\
+\break
+\textbf{(b)} If integers $x$ and $y$ have the same parity, then $x + y$ is even.\\
+\begin{align*}
+    \text{Proof} &\\
+    \text{Case 1: } & \text{x and y are both even} \\
+    1) & \quad \text{Let $x$ and $y$ be even integers. We will prove that $x + y$ is also even.}\\
+    2) & \quad \text{Since $x$ is even, $x = 2k$, for some integer $k$.}\\
+       & \quad \text{Since $y$ is even, $y = 2j$, for some integer $j$.}\\
+    3) & \quad \text{Plugging in for $x$ and $y$, $x + y = (2k) + (2j) = 2(k + j)$}\\
+    4) & \quad \text{Since $k$ and $j$ are both integers, $(k + j)$ is also an integer.} \\
+    5) & \quad \text{Therefore, $x + y$ is even.}\\
+    \text{Case 2: } & \text{x and y are both odd} \\
+    1) & \quad \text{Let $x$ and $y$ be odd integers. We will prove that $x + y$ is even.}\\
+    2) & \quad \text{Since $x$ is odd, $x = 2k + 1$, for some integer $k$.}\\
+       & \quad \text{Since $y$ is odd, $y = 2j + 1$, for some integer $j$.}\\
+    3) & \quad \text{Plugging in for $x$ and $y$, $x + y = (2k + 1) + (2j + 1) =$}\\        & \quad \text{$2k + 2j + 2 = 2(k + j + 1)$}\\
+    4) & \quad \text{Since $k$ and $j$ are both integers, $(k + j + 1)$ is also an integer.} \\
+    5) & \quad \text{Therefore, $x + y$ is even. }\blacksquare\\
+\end{align*}
+\end{document}

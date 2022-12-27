@@ -1,0 +1,816 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{blkarray, bigstrut}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{array,mathtools}
+\newcommand*{\carry}[1][1]{\overset{#1}}
+\newcolumntype{B}[1]{r*{#1}{@{\,}r}}
+\sisetup{
+  exponent-product=\cdot,
+  tight-spacing,
+  per-mode=symbol,
+}
+
+\sisetup{
+  exponent-product=\cdot,
+  tight-spacing,
+  per-mode=symbol,
+}
+
+
+\title{\textbf{Homework 1}}
+\author{Oscar Ramirez}
+\date{July 15 2022}
+
+\begin{document}
+\begin{titlepage}   
+
+    \raggedleft % Right align the title page
+
+    \rule{1pt}{\textheight} % Vertical line
+    \hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+    \parbox[b]{0.75\textwidth}{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+        {\large\textit{}}\\[4\baselineskip]
+
+        {\Huge\bfseries Homework 1}\\[2\baselineskip] % Title
+
+        {\Large\textsc{Oscar Ramirez}} % Author name, lower case for consistent small caps
+
+        \vspace{0.47\textheight} % Whitespace between the title block and the publisher
+        {\noindent NYU Tandon CS Bridge Summer 2022}\\[0.1\baselineskip]
+        {\noindent NetID: or2092}\\[\baselineskip]
+    }
+
+\end{titlepage}
+
+%\fontfamily{cambria}\selectfont
+
+\newpage
+\noindent \underline{\textbf{Question 1:}}\\*
+
+\noindent \textbf{A.} Convert the following numbers to their 8-bits two’s complement representation. Show your work.\\
+
+\noindent \textbf{1.}  10011011\textsubscript{2}= \textbf{155\textsubscript{10}}
+\begin{align*}
+1\cdot2^0+1\cdot2^1+0\cdot2^2+1\cdot2^3+1\cdot2^4+0\cdot2^5+0\cdot2^6+1\cdot2^7&= \\
+1(1)+1(2)+1(8)+1(16)+1(128)&= 155\textsubscript{10}\\
+\end{align*}
+\break
+\noindent \textbf{2.} 456\textsubscript{7} = \textbf{237\textsubscript{10}}
+\begin{align*}
+6\cdot7^0+5\cdot7^1+4\cdot7^2&=\\
+6(1)+5(7)+4(49)=6+35+196&= 237\textsubscript{10}
+\end{align*}
+\break
+\noindent \textbf{3.} 38A16 = \textbf{906\textsubscript{10}}
+\begin{align*}
+10\cdot 16 ^0+8\cdot 16 ^1+3\cdot 16 ^2&=\\
+10(1)+8(16)+3(256) &=\\
+10+128+768 &= 906\textsubscript{10} 
+\end{align*}
+\break
+\noindent \textbf{4.} 22145 = \textbf{309\textsubscript{10}}
+\begin{align*}
+4\cdot5^0+1\cdot5^1+2\cdot5^2+2\cdot5^3&=\\
+4(1)+1(5)+2(25)+2(125)&=\\
+4+5+50+250&= 309\textsubscript{10}
+\end{align*}
+\break
+\noindent \textbf{B)} Convert the following numbers to their binary representation:\\
+\noindent \textbf{1.} 69\textsubscript{10} = \textbf{(01000101)\textsubscript{2}}
+\begin{center}
+\begin{tabular}{c|c}
+128 & 0\\
+64 & 1\\
+32 & 0\\
+16 & 0\\ 
+8 & 0\\
+4 & 1\\
+2 & 0\\
+1 & 1\\
+\end{tabular}
+\end{center}
+\[69-64=5-4=1-1=0\]
+\break
+\newpage
+\noindent \textbf{2.} 485\textsubscript{10}= \textbf{(111100101)\textsubscript{2}}
+\begin{center}
+\begin{tabular}{c|c}
+256 & 1\\
+128 & 1\\
+64 & 1\\
+32 & 1\\
+16 & 0\\ 
+8 & 0\\
+4 & 1\\
+2 & 0\\
+1 & 1\\
+\end{tabular}
+\end{center}
+\[485-256=229-128=101-64=37-32=5-4=1-1=0\]
+\break
+\noindent \textbf{3.} 6D1A16 = (0110\ 1101\ 0001\ 1001)\textsubscript{2} = \textbf{(110110100011010)\textsubscript{2}}
+\begin{align*}
+    6\textsubscript{16}&=1101    \\
+    D\textsubscript{16}&=1101    \\
+    1\textsubscript{16}&=0001    \\
+    A\textsubscript{16}&=1010\\
+\end{align*}
+\newpage
+\noindent \textbf{C)} Convert the following numbers to their hexadecimal representation:\\
+\break
+\noindent \textbf{1.} 11010112 = (01101011)\textsubscript{2} = \textbf{6b\textsubscript{16}}
+\begin{align*}
+ 0110 \textsubscript{2}&=6\textsubscript{16}     \\
+ 1011\textsubscript{2} &=B\textsubscript{16}    \\
+\end{align*}
+
+
+\noindent \textbf{2.} 895\textsubscript{10} = \textbf{37F\textsubscript{16}}
+\begin{center}
+\begin{tabular}{c|c}
+512 & 1\\
+256 & 1\\
+128 & 0\\
+64 & 1\\
+32 & 1\\
+16 & 1\\ 
+8 & 1\\
+4 & 1\\
+2 & 1\\
+1 & 1\\
+\end{tabular}
+\end{center}
+\begin{align*}
+895-512=383-256 &= \\
+127-64=63-32=31-16 &=\\
+15-8=7-4=3-2=1-1 &=0\\
+\end{align*}
+\begin{align*}
+0011\textsubscript{2} &= 3\textsubscript{16}\\
+0111\textsubscript{2} &= 7\textsubscript{16}\\ 
+1111\textsubscript{2} &= F\textsubscript{16}\\
+\end{align*}
+
+\newpage
+\noindent \underline{\textbf{Question 2:}}\\*
+Solve the following, do all calculation in the given base. Show your work.\\
+\break
+\text{\textbf{1.}} 7566\textsubscript{8} + 4515\textsubscript{8} = \textbf{14303\textsubscript{8}}\\
+\begin{align*}
+    111\hspace{4mm} \\
+    7566_{8}\\ + \quad
+    \underline{4515_{8}}\\
+    14303_{8}
+\end{align*}
+
+\noindent \text{\textbf{2.}} 10110011\textsubscript{2} + 1101\textsubscript{2} = \textbf{11000000\textsubscript{2}}
+\begin{align*}
+    111111\hspace{3.9mm} \\
+    10110011_{2}\\ + \quad
+    \underline{\phantom{1011_{2}}1101_{2}}\\
+    11000000_{2}
+\end{align*}
+
+\noindent \text{\textbf{3.}} 7A66\textsubscript{16} + 45C5\textsubscript{16} =  \textbf{C02B\textsubscript{16}}\\
+\begin{align*}
+    11\hspace{8mm} \\
+    7A66_{16}\\ + \quad
+    \underline{45C5_{16}}\\
+    C02B_{16}
+\end{align*}
+
+\noindent \text{\textbf{4.}} 3022\textsubscript{5} - 2433\textsubscript{5} = \textbf{0034\textsubscript{5}}
+\begin{align*}
+    6\hspace{5mm}\\
+    29\cancel{1}1\hspace{3mm}\\
+    \cancel{3} 0\cancel{2} \cancel{2}_{5}\\ 
+    - \quad    \underline{2433_{5}}\\
+    0034_{5}\\
+\end{align*}
+
+\newpage
+\noindent \underline{\textbf{Question 3:}}\\
+
+\noindent \textbf{A.} Convert the following numbers to their 8-bits two’s complement representation. Show your work.\\
+\noindent\textbf{1.} 124\textsubscript{10} = \textbf{01111100\textsubscript{8-bit 2's comp}}
+
+\begin{center}
+\begin{tabular}{c|c}
+\centering
+64 & 1\\
+32 & 1\\
+16 & 1\\ 
+8 & 1\\
+4 & 1\\
+2 & 0\\
+1 & 0\\
+\end{tabular}
+\end{center}
+\[124-64=60-32=28-16=12-8=4-4=0\]
+\break
+\noindent\textbf{2.} -124\textsubscript{10} = \textbf{10000100\textsubscript{8 bit 2’s comp}}\\
+
+$$\begin{array}[t]{r}
+    0111\ 1100 \\
++ \ 1000\ 0100 \\ \hline
+    10000\ 0000
+\end{array}$$ \
+Because we know the value of 124 in binary from the previous problem, we can skip to finding it's additive inverse to get the negative value in two's complement.\\
+\newpage
+\noindent\textbf{3.} 109\textsubscript{10} = \textbf{01101101\textsubscript{8 bit 2’s comp}}\\
+\begin{center}
+\begin{tabular}{c|c}
+128 & 0\\
+64 & 1\\
+32 & 1\\
+16 & 0\\ 
+8 & 1\\
+4 & 1\\
+2 & 0\\
+1 & 1\\
+\end{tabular}
+\end{center}
+\[109 - 64 = 45 - 32 = 13 - 8 = 5 - 4 = 1 - 1 = 0\]
+\noindent\textbf{4.} -79\textsubscript{10} = \textbf{10110001\textsubscript{8 bit 2’s comp}}
+\begin{center}
+\begin{tabular}{c|c}
+128 & 0\\
+64 & 1\\
+32 & 0\\
+16 & 0\\ 
+8 & 1\\
+4 & 1\\
+2 & 1\\
+1 & 1\\
+\end{tabular}
+\end{center}
+\[79 - 64 = 15 - 8 = 7 - 4 = 3 - 2 = 1 - 1 = 0\]
+$$\begin{array}[t]{r}
+    0100\ 1111 \\
++ \ 1011\ 0001 \\ \hline
+    10000\ 0000
+\end{array}$$ \
+Because we're converting a negative number in two's complement, it is necessary to find it's additive inverse after converting to  8-bit two's complement. Which resulted in 10110001.\\
+\break
+\noindent\textbf{B.} Convert the following numbers (represented as 8-bit two’s complement) to their
+decimal representation. Show your work.\\
+\break
+\noindent\textbf{1.} 00011110\textsubscript{8-bit 2’s comp} = \textbf{30\textsubscript{10}}
+\begin{align*}
+    0\cdot2^0+1\cdot2^1+1\cdot2^2+1\cdot2^3+1\cdot2^4+0\cdot2^5+0\cdot2^6+0\cdot2^7 &=\\
+    0+2+0+4+8+16+0+0+0 &= 30_\text{10}\\
+\end{align*}
+\newpage
+\noindent\textbf{2.} 11100110\textsubscript{8-bit 2’s comp} =\textbf{-26\textsubscript{10}}
+\begin{center}
+$$\begin{array}[t]{r}
+    1110\ 0110 \\
++ \ 0001\ 1010 \\ \hline
+    10000\ 0000
+\end{array}$$ \\
+\end{center}
+\begin{align*}
+0\cdot2^0+1\cdot2^1+0\cdot2^2+1\cdot2^3+1\cdot2^4 &= \\
+0+2+0+8+16 &= 26 \to -26\\
+\end{align*}\\*
+\noindent\textbf{3.} 00101101\textsubscript{8-bit 2’s comp} = \textbf{45\textsubscript{10}}\\
+\begin{align*}
+1\cdot2^0+0\cdot2^1+1\cdot2^2+1\cdot2^3+0\cdot2^4+1\cdot2^5 &=\\
+1+0+4+5+0+32 &= 45_\text{10}
+\end{align*}
+\noindent\textbf{4.} 10011110\textsubscript{8-bit 2’s comp} = \textbf{-98\textsubscript{10}}
+$$\begin{array}[t]{r}
+    1001\ 1110 \\
++ \ 0110\ 0010 \\ \hline
+    10000\ 0000
+\end{array}$$ \\
+\begin{align*}
+0*2^0    1*2^1   0*2^2   0*2^3   0*2^4   1*2^5   1*2^6 &=\\
+0+2+0+0+0+32+64 &= 98\textsubscript{10} \to -98\textsubscript{10}
+\end{align*}
+\newpage
+\noindent \underline{\textbf{Question 4:}}\\*
+\textbf{Exercise 1.2.4:}\\
+Write a truth table for each expression.\\
+\[\text{\textbf{(b)}} \quad \neg{(}p \lor q)\]
+\begin{displaymath}
+\begin{array}{|c c|c|c|}
+\hline
+p & q  & p p \lor q & \neg{(}p \lor q)\\ 
+\hline 
+T & T & T & \textbf{F}\\
+T & F & T & \textbf{F}\\
+F & T & T & \textbf{F}\\
+F & F & F & \textbf{T}\\
+\hline
+\end{array}
+\end{displaymath}\\
+\[\text{\textbf{(c)}} \quad r \lor (p \land \neg{q})\]
+\begin{displaymath}
+\begin{array}{|c c c|c|c|}
+\hline
+p & q & r & p \land \neg{q} & r \lor (p \land \neg{q})\\ 
+\hline 
+T & T & T & F & \textbf{T}\\
+T & T & F & F & \textbf{F}\\
+T & F & T & T & \textbf{T}\\
+T & F & F & T & \textbf{T}\\
+F & T & T & F & \textbf{T}\\
+F & T & F & F & \textbf{F}\\
+F & F & T & F & \textbf{T}\\
+F & F & F & F & \textbf{T}\\
+\hline
+\end{array}
+\end{displaymath}\\
+\textbf{Exercise 1.3.4:}\\
+Give a truth table for each expression.
+\[\text{\textbf{(b)}} \quad (p \to q) \to (q \to p)\]
+\begin{displaymath}
+\begin{array}{|c c|c|c|c|}
+\hline
+p & q  & p \to q & q \to p & (p \to q) \to (q \to p)\\ 
+\hline 
+T & T & T & T & \textbf{T}\\
+T & F & F & T & \textbf{T}\\
+F & T & T & F & \textbf{F}\\
+F & F & T & T & \textbf{T}\\
+\hline
+\end{array}
+\end{displaymath}\\
+\[\text{\textbf{(d)}} \quad (p \leftrightarrow q) \oplus (p \leftrightarrow \neg{q})\]
+\begin{displaymath}
+\begin{array}{|c c c|c|c|}
+\hline
+p & q & p \leftrightarrow \neg{q} & (p \leftrightarrow q) \oplus (p \leftrightarrow \neg{q})\\ 
+\hline 
+T & T & F & \textbf{T}\\
+T & F & T & \textbf{T}\\
+F & T & T & \textbf{T}\\
+F & F & F & \textbf{T}\\
+\hline
+\end{array}
+\end{displaymath}\\
+\newpage
+\noindent \underline{\textbf{Question 5:}}\\*
+\textbf{Exercise 1.2.7:}\\ 
+Consider the following pieces of identification a person might have in order to apply for a credit card:
+\begin{itemize}[noitemsep,topsep=0pt]
+\item B: Applicant presents a birth certificate.
+\item D: Applicant presents a driver's license.
+\item M: Applicant presents a marriage license.
+\end{itemize}
+Write a logical expression for the requirements under the following conditions:\\
+
+\noindent \textbf{(b)} The applicant must present at least two of the following forms of identification: birth certificate, driver's license, marriage license.
+\[(B \land M) \lor (D \land  M) \lor (M \land D)	\]
+
+\noindent \textbf{(c)} Applicant must present either a birth certificate or both a driver's license and a marriage license.
+\[B \lor (D \land M)\]
+\break
+\noindent \textbf{Exercise 1.3.7:}\\
+Define the following propositions:
+\begin{itemize}[noitemsep,topsep=0pt]
+\item s: a person is a senior
+\item y: a person is at least 17 years of age
+\item p: a person is allowed to park in the school parking lot
+\end{itemize}
+Express each of the following English sentences with a logical expression:\\
+
+\noindent\textbf{(b)} A person can park in the school parking lot if they are a senior or at least seventeen years of age.
+\[(s \lor y) \to p\]
+
+\noindent \textbf{(c)} Being 17 years of age is a necessary condition for being able to park in the school parking lot.
+\[p \to y\]
+
+\noindent \textbf{(d)} A person can park in the school parking lot if and only if the person is a senior and at least 17 years of age.
+\[p \leftrightarrow (s \land y)\]
+
+\noindent \textbf{(e)} Being able to park in the school parking lot implies that the person is either a senior or at least 17 years old.
+\[p \to (s \lor y)\]
+\newpage
+\noindent\textbf{Exercise 1.3.9:}\\
+Use the definitions of the variables below to translate each English statement into an equivalent logical expression.
+\begin{itemize}
+\item y: the applicant is at least eighteen years old
+\item p: the applicant has parental permission
+\item c: the applicant can enroll in the course
+\end{itemize}
+\textbf{(c)} The applicant can enroll in the course only if the applicant has parental permission.
+\[c \to p\]
+
+\noindent\textbf{(d)} Having parental permission is a necessary condition for enrolling in the course.
+\[c \to p\]
+\newpage
+\noindent \underline{\textbf{Question 6:}}\\*
+\textbf{Exercise 1.3.6:}
+Give an English sentence in the form "If...then...." that is equivalent to each sentence.\\
+\break
+(b)	Maintaining a B average is necessary for Joe to be eligible for the honors program.
+\[ \text{\textbf{If Joe is eligible for the honors program, then he has a B average.}}\]
+\break
+(c)	Rajiv can go on the roller coaster only if he is at least four feet tall.
+\[ \text{\textbf{If Rajiv can go on the roller coaster, then he is at least 4 feet tall.}}\]
+\break
+(d)	Rajiv can go on the roller coaster if he is at least four feet tall.
+\[ \text{\textbf{If Rajiv is at least four feet tall, then he can go on the roller coaster.}}\]
+\break
+\textbf{Exercise 1.3.10:}\\
+The variable p is true, q is false, and the truth value for variable r is unknown. Indicate whether the truth value of each logical expression is true, false, or unknown.
+\begin{align*}
+\text{\textbf{(c)}} \quad (p \lor r) \leftrightarrow  (q \land r)     &: \quad\\
+(T) \leftrightarrow (F \land r)     &: \quad \text{\textbf{Substitution}}\\
+(T) \leftrightarrow (F)     &: \quad \text{\textbf{Domination law}}\\
+F\\
+\end{align*}
+In order for this logical expressions to be true, both statements must either both be true, or both be false. So this expression is \textbf{false.}\\
+\begin{align*}
+\text{\textbf{(d)}} \quad (p \land r) \leftrightarrow (q \land r)     &: \quad	\\
+(T \land r) \leftrightarrow (F)     &: \quad \text{\textbf{Substitution}}		\\
+Unknown     &: \quad\\
+\end{align*}
+The statement: \[(T \land r)\] can either be true if r is true, or false if r is false. The bi-conditional statement can only be true if r is false, but we do not have that information. Therefore with the data available, the truth value is \textbf{unknown.}\\
+\newpage
+\begin{align*}
+\text{\textbf{(e)}} \quad p \to (r \lor q)     &: \quad\\
+T \to (r \lor F)     &: \quad \text{\textbf{Substitution}}\\
+Unknown\\
+\end{align*}
+The statement: \[(r \lor F)\] can either be true if r is true, or false if r is false. The bi-conditional statement can only be true if r is true, but we do not have that information. Therefore with the data available, the truth value is \textbf{unknown.}\\
+\begin{align*}
+\text{\textbf{(f)}} \quad (p \land q) \to r     &: \quad\\
+(F) \to r     &: \quad \text{\textbf{Substitution}}\\
+T     &: \quad\\
+\end{align*}
+Conditional statements are only false when the hypothesis is true, but the conclusion is false. Since the hypothesis is false, we know that the overall expression is \textbf{true.}
+\newpage
+\noindent \underline{\textbf{Question 7:}}\\*
+\textbf{Exercise 1.4.5:}
+Define the following propositions:
+\begin{itemize}
+\item j: Sally got the job.
+\item l: Sally was late for her interview
+\item r: Sally updated her resume.
+\end{itemize}
+Express each pair of sentences using logical expressions. Then prove whether the two expressions are logically equivalent.\\
+\break
+\noindent \text{\textbf{(b)}}\quad If Sally did not get the job, then she was late for her interview or did not update her resume.
+If Sally updated her resume and was not late for her interview, then she got the job.
+\[1. \neg{J} \to (L \lor \neg{R})\]
+\[2. (R \land \neg{L}) \to J\]
+
+\begin{displaymath}
+\begin{array}{|c c c|c|c|}
+\hline
+j & l & r & \neg{J} \to (L \lor \neg{R}) & (R \land \neg{L}) \to J \\ 
+\hline 
+T & T & T & \textbf{T} & \textbf{T}\\
+T & T & F & \textbf{T} & \textbf{T}\\
+T & F & T & \textbf{T} & \textbf{T}\\
+T & F & F & \textbf{T} & \textbf{T}\\
+F & T & T & \textbf{T} & \textbf{T}\\
+F & T & F & \textbf{T} & \textbf{T}\\
+F & F & T & \textbf{F} & \textbf{F}\\
+F & F & F & \textbf{T} & \textbf{T}\\
+\hline
+\end{array}
+\end{displaymath}
+\break
+The truth table displays that all truth values are the same regardless of the individual variables’ truth values. Therefore, \textbf{these expressions are logically equivalent.}\\
+\newpage
+\text{\textbf{(c)}}\quad If Sally got the job then she was not late for her interview.
+If Sally did not get the job, then she was late for her interview.
+\[1. J \to \neg{L}\]
+\[2. \neg{J} \to L\]
+
+\begin{displaymath}
+\begin{array}{|c c|c|c|}
+\hline
+j & l  & J \to \neg{L} & \neg{J} \to L\\ 
+\hline 
+T & T & \textbf{F} & \textbf{T}\\
+T & F & T & T\\
+F & T & T & T\\
+F & F & \textbf{T} & \textbf{F}\\
+\hline
+\end{array}
+\end{displaymath}
+\break
+The two expressions have different truth values when J=L=T, and when J=L=F. Therefore, \textbf{these expressions are not logically equivalent.}\\
+\break
+\text{\textbf{(d)}}\quad If Sally updated her resume or she was not late for her interview, then she got the job.
+If Sally got the job, then she updated her resume and was not late for her interview.
+\[1. (R \lor \neg{L}) \to J\]
+\[2. J \to(R \land \neg{L})\]
+
+\begin{displaymath}
+\begin{array}{|c c c|c|c|}
+\hline
+j & l & r & (R \lor \neg{L}) \to J & J \to(R \land \neg{L}) \\ 
+\hline 
+T & T & T & T & T\\
+T & T & F & \textbf{T} & \textbf{F}\\
+T & F & T & T & T\\
+T & F & F & T & T\\
+F & T & T & F & T\\
+F & T & F & T & T\\
+F & F & T & \textbf{F} & \textbf{T}\\
+F & F & F & F & T\\
+\hline
+\end{array}
+\end{displaymath}
+\break
+The truth table displays different truth values for the expressions when J and L are true, and R is false. Therefore \textbf{these expressions are not logically equivalent.}
+\newpage
+\noindent \underline{\textbf{Question 8:}}\\*
+\textbf{Exercise 1.5.2:}
+Use the laws of propositional logic to prove the following:
+\begin{align*}
+\text{\textbf{(c)}} \quad (p \to q) \land (p \to r) &\equiv\qquad p \to (q \land r)\\
+ (p \to q) \land (p \to r)	&:\\
+ (\neg{p} \lor q) \land (p \to r)	&:\qquad	\text{\textbf{Conditional identity}}\\
+ (\neg{p} \lor q) \land (\neg{p} \lor r)	&:\qquad	\text{\textbf{Conditional identity}}\\
+ \neg{p} \lor (q \land r)		&:\qquad	\text{\textbf{Distributive law}}\\
+ p \to (q \land r)		&:\qquad	\text{\textbf{Conditional Identity}}\\
+  p \to (q \land r)&\equiv\qquad \  p \to (q \land r)
+\end{align*}
+\begin{align*}
+\text{\textbf{(f)}} \quad \neg{(}p \lor (\neg{p} \land q)) &\equiv \neg{p} \land \neg{q}\\
+ \neg{(}p \lor (\neg{p} \land q)) &: \\
+ \neg{p} \land \neg{(} \neg{p} \land q)	&:\ \ \quad \text{\textbf{ De Morgan’s law}} \\
+ \neg{p} \land (\neg{\neg{p}} \lor \neg{q})	&:\ \ \quad	\text{\textbf{ De Morgan’s law}}\\
+ \neg{p} \land (p \lor \neg{q})		&:\qquad	\text{\textbf{Double negation law}}\\
+ (\neg{p} \land p) \lor (\neg{p} \land \neg{q})	&:\qquad	\text{\textbf{Distributive law}}\\
+ (p \land \neg{p}) \lor (\neg{p} \land \neg{q})	&:\qquad	\text{\textbf{Commutative law}}\\
+ F \lor (\neg{p} \land \neg{q})	&:	\qquad	\text{\textbf{Complement law}}\\
+ (\neg{p} \land \neg{q}) \lor F	&:	\qquad	\text{\textbf{Commutative law}}\\
+ \neg{p} \land \neg{q}		&:	\qquad	\text{\textbf{Identity law}}\\
+ \neg{p} \land \neg{q} &\equiv\quad \  \neg{p} \land \neg{q}
+\end{align*}
+\begin{align*}
+\text{\textbf{(i)}}(p \land q) \to r   &\equiv   (p \land \neg{r}) \to \neg{q}\\
+(p \land q) \to r &:\\
+\neg{(}p \land q) \lor r			&:\qquad \text{\textbf{Conditional identity}}\\
+\neg{p} \lor \neg{q} \lor r			&:\qquad \text{\textbf{De Morgan’s law}}\\
+(\neg{p} \lor r) \lor \neg{q}			&:\qquad \text{\textbf{Associative law}}\\
+\neg{(}\neg{p} \lor r) \to \neg{q}		&:\qquad \text{\textbf{Conditional identity}}\\
+(p \land \neg{r}) \to \neg{q}		&:\qquad \text{\textbf{De Morgan’s law}}\\
+(p \land \neg{r}) \to \neg{q} &\equiv\quad \   (p \land \neg{r}) \to \neg{q}\\
+\end{align*}
+\newpage
+\noindent\textbf{Exercise 1.5.3:}\\
+Use the laws of propositional logic to prove that each statement is a tautology.
+\break
+\begin{align*}
+\text{\textbf{(c)}} \quad\qquad \neg{r} \lor (\neg{r} \to p) &:\\
+\neg{r} \lor (\neg{r} \to p) &:\\
+\neg{r} \lor (\neg{\neg{r}} \lor p)		&:\qquad \text{Conditional identity}\\
+\neg{r} \lor r \lor p			&:\qquad \text{Double negation law}\\
+r \lor \neg{r} \lor p			&:\qquad \text{Commutative law}\\
+T \lor p				&:\qquad \text{Complement law}\\
+p \lor T				&:\qquad \text{Commutative law}\\
+\text{\textbf{T}}				&:\qquad \text{\textbf{Domination law}}\\
+\end{align*}
+\noindent The proposition is logically equivalent to T, therefore it is a tautology.
+\begin{align*}
+\text{\textbf{(d)}}\quad\qquad \neg{(}p \to q) \to \neg{q}&:\\
+\neg{\neg{(}}p \to q) \lor \neg{q}		&:\qquad \text{Conditional identity}\\
+(p \to q) \lor \neg{q}			&:\qquad \text{Double negation law}\\
+(\neg{p} \lor q) \lor \neg{q}		&:\qquad \text{Conditional identity}\\
+\neg{p} \lor (q \lor \neg{q})		&:\qquad \text{Associative law}\\
+\neg{p} \lor T				&:\qquad \text{Complement law}\\
+\text{\textbf{T}}				&:\qquad \text{\textbf{Domination law}}\\
+\end{align*}
+\noindent The proposition is logically equivalent to T, therefore it is a tautology.
+\newpage
+\noindent \underline{\textbf{Question 9:}}\\*
+\textbf{Exercise 1.6.3:}
+Consider the following statements in English. Write a logical expression with the same meaning. The domain is the set of all real numbers.\\*
+\break
+\noindent(c) There is a number that is equal to its square.
+\[\exists x\ (x = x2)\]
+(d) Every number is less than or equal to its square plus 1.
+\[\forall x\ (x \leq x2)\]
+\noindent\textbf{Exercise 1.7.4:}
+In the following question, the domain is a set of employees who work at a company. Ingrid is one of the employees at the company. Define the following predicates:
+\begin{itemize}
+\item S(x): x was sick yesterday
+\item W(x): x went to work yesterday
+\item V(x): x was on vacation yesterday
+\end{itemize}
+Translate the following English statements into a logical expression with the same meaning.\\
+\break
+(b) Everyone was well and went to work yesterday.
+\[\forall x\ (\neg{S}(x) \land W(x))\]
+
+\noindent(c) Everyone who was sick yesterday did not go to work.
+\[\forall x\ (S(x) \to \neg{W}(x))\]
+
+\noindent(d) Yesterday someone was sick and went to work.
+\[\exists x\ (S(x) \land W(x)) \]
+
+\newpage
+\noindent \underline{\textbf{Question 10:}}\\*
+\noindent \textbf{Exercise 1.7.9:}\\*
+\[\text{\textbf{(a)}} \qquad\forall x\ (R(x) \lor Q(x) \to P(x)) \text{\textbf{= T}} \qquad\text{\textbf{(f)}} \qquad\forall x\ ((x \neq b) \to Q(x)) \text{\textbf{= T}}\]
+
+\[\text{\textbf{(b)}} \qquad\exists x\ ((x \neq b) \land \neg{Q}(x)) \text{\textbf{= T}}\qquad\qquad \text{\textbf{(g)}} \qquad \forall x\ (P(x) \lor R(x)) \text{\textbf{= F}}\qquad\]
+
+\[\text{\textbf{(c)}} \qquad\exists x\ ((x = c) \to P(x)) \text{\textbf{= T}}\qquad\qquad\text{\textbf{(h)}} \qquad \forall x\ (R(x) \to P(x)) \text{\textbf{= T}}\]
+
+\[\text{\textbf{(d)}} \qquad\exists x\ (Q(x) \land R(x)) \text{\textbf{= T}}\qquad\qquad\qquad\text{\textbf{(i)}} \qquad \exists x\ (Q(x) \lor R(x)) \text{\textbf{= T}}\]
+
+\[\text{\textbf{(e)}} \qquad Q(a) \land P(d) \text{\textbf{= T}}\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\]
+\break
+\break
+\noindent \textbf{Exercise 1.9.2:}\\*
+The tables below show the values of predicates P(x, y), Q(x, y), and S(x, y) for every possible combination of values of the variables x and y. The row number indicates the value for x and the column number indicates the value for y. The domain for x and y is {1, 2, 3}.
+
+\[
+  \begin{array}{l@{{}={}}c}
+  \text{P(x)} & \left(\begin{array}{@{}ccc@{}}
+    T & T & T \\
+    T & F & T \\
+    T & F & F \\
+  \end{array}\right)
+  \end{array}
+\]
+
+\[
+  \begin{array}{l@{{}={}}c}
+  \text{Q(x)} & \left(\begin{array}{@{}ccc@{}}
+    F & F & F \\
+    T & T & T \\
+    T & F & F \\
+  \end{array}\right)
+  \end{array}
+\]
+
+\[
+  \begin{array}{l@{{}={}}c}
+  \text{S(x)} & \left(\begin{array}{@{}ccc@{}}
+    F & F & F \\
+    F & F & F \\
+    F & F & F \\
+  \end{array}\right)
+  \end{array}
+\]
+\[\text{(b)} \qquad \exists x\ \forall y\ Q(x, y)  = \text{\textbf{T}} \qquad \text{(f)} \qquad \forall x\ \exists y\ P(x, y)  = \text{\textbf{T}}\]
+\[\text{(c)} \qquad \exists y\ \forall x\ P(x, y)  = \text{\textbf{T}} \qquad \text{(g)} \qquad \forall x\ \forall y\ P(x, y) = \text{\textbf{F}}\]
+\[\text{(d)} \qquad \exists x\ \exists y\ S(x, y)  = \text{\textbf{F}} \qquad \text{(h)} \qquad \exists x\ \exists y\ Q(x, y) = \text{\textbf{T}}\]
+\[\text{(e)} \qquad \forall x\ \exists y\ Q(x, y)  = \text{\textbf{F}} \qquad \text{(i)} \qquad \forall x\ \forall y\ \neg{S}(x, y)  = \text{\textbf{T}}\]
+
+\newpage
+\noindent \underline{\textbf{Question 11:}}\\*
+\break
+\textbf{Exercise 1.10.4:}\\*
+Translate each of the following English statements into logical expressions. The domain is the set of all real numbers.\\
+\break
+\textbf{(c)} There are two numbers whose sum is equal to their product.\\ 
+\break
+\[ \exists x\ \exists y\ (x+y=x \cdot y) \]
+\break
+
+\noindent \textbf{(d)} The ratio of every two positive numbers is also positive.\\ 
+\break
+\[ \forall x\ (\forall y\ ((x>0) \land (y>0)) \to (\frac{x}{y}>0)) \]
+\break
+
+\noindent \textbf{(e)} The reciprocal of every positive number less than one is greater than one.\\ 
+\break
+\[ \forall x\ ((0 < x < 1) \to (\frac{1}{x} > 1)) \]
+\break
+
+\noindent \textbf{(f)} There is no smallest number.\\  
+\break
+\[ \neg{\exists} x\ \forall y\ (x \leq y) \]
+\break
+
+\noindent \textbf{(g)} Every number other than 0 has a multiplicative inverse.\\ 
+\break
+\[ \land x\ \exists y\ (x \neq 0) \to (x \cdot y=1) \]
+\break
+\newpage
+\noindent \textbf{Exercise 1.10.7:} \\*
+The domain is a group working on a project at a company. One of the members of the group is named Sam. Define the following predicates.
+\begin{itemize}[noitemsep]
+\item P(x, y): x knows y's phone number.
+\item D(x): x missed the deadline.
+\item N(x): x is a new employee.
+\end{itemize}
+\noindent Give a logical expression for each of the following sentences.
+\break
+\break
+(c) There is at least one new employee who missed the deadline.
+\[ \exists x\ (N(x) \land D(x)) \] 
+\break
+(d) Sam knows the phone number of everyone who missed the deadline.
+\[ \forall x\ D(x)\to P(Sam,x) \]
+\break
+(e) There is a new employee who knows everyone's phone number.
+\[ \exists x\ N(x) \land P(x,y) \]
+\break
+(f) Exactly one new employee missed the deadline.
+\[ \exists x\ \forall y\ ((D(x) \land N(x) \land ((y \neq x) \land  N(y)) \to \neg{(}D(y))) \]
+
+
+
+
+
+\newpage
+\noindent \textbf{Exercise 1.10.10:}\\
+The domain for the first input variable to predicate T is a set of students at a university. The domain for the second input variable to predicate T is the set of Math classes offered at that university. The predicate T(x, y) indicates that student x has taken class y. Sam is a student at the university and Math 101 is one of the courses offered at the university. Give a logical expression for each sentence.\\
+\break
+\textbf{(c)} Every student has taken at least one class other than Math 101. \\
+\[ \forall x\ \exists y\ (T(x,y) \land (y \neq Math101)) \]
+\textbf{(d)} There is a student who has taken every math class other than Math 101. \\
+\[ \exists x\ \forall y\ T(x,y) \land ((y \neq Math101) \to T(x,y))\]
+\textbf{(e)} Everyone other than Sam has taken at least two different math classes. \\
+\[ \forall x\ \exists y\  \exists z\ ((x \neq Sam \land (z \neq y)) \to (T(x,y) \land T(x,z)) \]
+\textbf{(f)} Sam has taken exactly two math classes. \\
+\[\exists x\ \exists y\ \exists z\ \forall j\ (T(Sam, y) \land T(Sam, z)) \land (j \neq y \land j \land z)) \to \neg{T}(Sam,j) \]
+
+\newpage
+\noindent \underline{\textbf{Question 12:}}\\*
+\break
+\textbf{Exercise 1.8.2:}\\*
+In the following question, the domain is a set of male patients in a clinical study. Define the following predicates:\\
+\begin{itemize}[noitemsep,topsep=0pt]
+\item P(x): x was given the placebo
+\item D(x): x was given the medication
+\item M(x): x had migraines\\
+\end{itemize}
+Translate each statement into a logical expression. Then negate the expression by adding a negation operation to the beginning of the expression. Apply De Morgan's law until each negation operation applies directly to a predicate and then translate the logical expression back into English.\\
+\break
+\normalsize
+\noindent \textbf{(b)} Every patient was given the medication or the placebo or both.\\
+\break
+\[ \forall x\ (D(x) \lor P(x))   \]
+\[ \text{Negation:}  \qquad\qquad \neg(\forall x\ (D(x) \lor P(x)))   \]
+\[ \text{De Morgans law:} \qquad \exists x\ ( \neg{D}(x) \land \neg{P}(x))\]
+English: There exists a patient who was not given the medication and not given the placebo.\\*
+\break
+\noindent \textbf{(c)} There is a patient who took the medication and had migraines.
+\[ \exists x\ (D(x) \land M(x))   \]
+\[ \text{Negation:} \qquad   \neg{\exists} x\ (D(x) \land M(x))   \]
+\[ \text{De Morgan’s law:} \qquad   \forall x\ \neg{D}(x) \lor \neg{M}(x)   \]
+English: Every patient was not given medication or did not have migraines or both.\\
+\break
+\break
+\noindent \textbf{(d)}
+\[ \forall x (P(x) \to M(x))   \]
+\[ \forall x (\neg{P}(x) \lor M(x))   \]
+\[ \text{Negation:} \qquad   \neg{(} \forall x\ (\neg{P}(x) \lor M(x))   \]
+\[ \text{De Morgans law:} \qquad   \exists x\ (P(x) \land \neg{M}(x))   \]
+English: There is a patient that was given the placebo and did not have migraines.\\
+\newpage
+\noindent \textbf{(e)}
+\[ \exists x\ (M(x) \land P(x))   \]
+\[ \text{Negation:} \qquad \neg{(} \exists x (M(x) \land P(x))   \]
+\[ \text{De Morgan’s law:} \qquad\ \forall x\ (\neg{M}(x) \lor \neg{P}(x))   \]
+English: Every patient did not have migraines or was not given the placebo.
+\break
+\break
+
+\noindent \textbf{Exercise 1.9.4:}\\*
+\noindent Write the negation of each of the following logical expressions so that all negations immediately precede predicates. In some cases, it may be necessary to apply one or more laws of propositional logic.\\*
+\break
+\textbf{(c)}\\*
+\break
+\begin{align*}
+ \exists x\ \forall y\ (P(x, y) \to Q(x, y))\\
+ \exists x\ \forall y\ (\neg{P}(x, y) \lor Q(x, y))	&\qquad \text{Conditional Identity}\\
+ \neg{(}\exists x\ \forall y\ (\neg{P}(x, y) \lor Q(x, y)))	&\qquad \text{Negation}\\
+ \forall x\ \exists y\ \neg{(}\neg{P}(x, y) \lor Q(x, y))	&\qquad	\text{De Morgan's law}\\
+ \forall x\ \exists y\ \neg{\neg{P}}(x, y) \land \neg{Q}(x, y)) &\qquad	    \text{De Morgan's law}\\
+ \forall x\ \exists y\ P(x, y) \land \neg{Q}(x, y)) &\qquad	\text{Double negation law}\\
+ \end{align*}
+
+\newpage
+\noindent \textbf{(d)}
+\begin{align*}
+ \exists x\ \forall y\ (P(x, y) \leftrightarrow P(y, x))	\\
+ \exists x\ \forall y\ (P(x, y) \to P(y, x) \land P(y, x) \to P(x, y))	 &\qquad \text{Conditional identity}\\
+ \exists x\ \forall y\ ((\neg{P}(x, y) \lor P(y, x)) \land (\neg{P}(y, x) \lor P(x, y)))	  &\qquad \text{Conditional identity}\\
+ \neg{(}\exists x\ \forall y\ ((\neg{P}(x, y) \lor P(y, x)) \land (\neg{P}(y, x) \lor P(x, y))))	 &\qquad \text{Negation}\\
+ \forall x\ \exists y\ \neg{(}(\neg{P}(x, y) \lor P(y, x)) \land (\neg{P}(y, x) \lor P(x, y))) &\qquad  \text{De Morgan's law}\\
+ \forall x\ \exists y\ \neg{(}\neg{P}(x, y) \lor P(y, x)) \lor \neg{(} \neg{P}(y, x) \lor P(x, y))  &\qquad \text{De Morgan's law} \\
+ \forall x\ \exists y\ (\neg{\neg{P}}(x, y) \land \neg{P}(y, x)) \lor (\neg{\neg{P}}(y, x) \land \neg{P}(x, y))  &\qquad \text{De Morgan's law} \\
+ \forall x\ \exists y\ (P(x, y) \land \neg{P}(y, x)) \lor (P(y, x) \land \neg{P}(x, y))	  &\qquad \text{Double negation law}\\
+\end{align*}
+
+
+\noindent \textbf{(e)}
+\begin{align*}
+ \exists x\ \exists y\ P(x, y) \land \forall x\ \forall y\ Q(x, y)\\
+ \neg{(}\exists x\ \exists y\ P(x, y) \land \forall x\ \forall y\ Q(x, y)) &\qquad \text{Negation}\\
+ \neg{\exists} x\ \exists y\ P(x, y) \lor \neg{\forall} x\ \forall y\ Q(x, y) &\qquad \text{De Morgan's law}\\
+ \forall x\ \forall x\ \neg{P}(x, y) \lor \exists x\ \exists y\ \neg{Q}(x, y) &\qquad \text{De Morgan's law}\\
+\end{align*}
+\end{document}

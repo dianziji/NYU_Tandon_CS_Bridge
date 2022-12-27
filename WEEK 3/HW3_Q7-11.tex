@@ -1,0 +1,378 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{blkarray, bigstrut}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{array,mathtools}
+\newcommand*{\carry}[1][1]{\overset{#1}}
+\newcolumntype{B}[1]{r*{#1}{@{\,}r}}
+\sisetup{
+  exponent-product=\cdot,
+  tight-spacing,
+  per-mode=symbol,
+}
+
+
+\title{\textbf{Homework 2}}
+\author{Oscar Ramirez}
+\date{July 22 2022}
+
+\begin{document}
+\begin{titlepage}
+
+    \raggedleft % Right align the title page
+
+    \rule{1pt}{\textheight} % Vertical line
+    \hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+    \parbox[b]{0.75\textwidth}{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+        {\large\textit{}}\\[4\baselineskip]
+
+        {\Huge\bfseries Homework 3}\\[2\baselineskip] % Title
+
+        {\Large\textsc{Oscar Ramirez}} % Author name, lower case for consistent small caps
+
+        \vspace{0.47\textheight} % Whitespace between the title block and the publisher
+        {\noindent NYU Tandon CS Bridge Summer 2022}\\[0.1\baselineskip]
+        {\noindent NetID: or2092}\\[\baselineskip]
+    }
+
+\end{titlepage}
+\newpage
+
+\noindent \textbf{\underline{Question 7:}}\\
+\textbf{Exercise 3.1.1 - Set membership and subsets - true or false..}\\
+Use the definitions for the sets given below to determine whether each statement is true or false:
+\begin{description}[noitemsep,topsep=0pt]
+\item A = \{$x \in \mathbb{Z}$: $x$ is an integer multiple of 3\}
+\item B = \{$x \in \mathbb{Z}$: $x$ is a perfect square\}
+\item C = \{4, 5, 9, 10\}
+\item D = \{2, 4, 11, 14\}
+\item E = \{3, 6, 9\}
+\item F = \{4, 6, 16\}
+\end{description}
+An integer x is a perfect square if there is an integer y such that x = y2.\\
+\break
+(a) 27 $\in$ A is \textbf{True}\\
+Since A is the set of all positive integer multiples of 3, and 27 is a multiple of 3, the statement is true.\\
+\break
+(b) 27 $\in$ B is \textbf{False}\\
+Since B is the set of all perfect squares, and 27 is not a perfect square, the statement is false.\\
+\break
+(c) 100 $\in$ B is \textbf{True}\\
+Since B is the set of all perfect squares, and 100 is a perfect square, the statement is true.\\
+\break
+(d) E $\subseteq$ C or C $\subseteq$ E is \textbf{False}\\
+Sets C and E only have 1 of their multiple unique elements in common, so C is not a subset of E, and E is not a subset of C.\\
+\break
+(e) E $\subseteq$ A is \textbf{True}\\
+Since set A contains \emph{all} integer multiples of 3, and E contains \emph{some} multiples of 3, E is a subset of A.\\
+\break
+(f) A $\subset$ E is \textbf{False}\\
+Since A contains more unique elements than E, A cannot be a subset of E, despite having 3 elements in common.\\
+\break
+(g) E $\in$ A is \textbf{False}\\
+E is a subset of A, not an element of A. This would only be true if A contained the element \{3, 6, 9\}, but it does not.\\
+
+\newpage
+\noindent \textbf{Exercise 3.1.2 - Set membership and subsets - true or false, cont.}\\
+Use the definitions for the sets given below to determine whether each statement is true or false:
+\begin{description}[noitemsep,topsep=0pt]
+\item A = { $x \in \mathbb{Z}$: $x$ is an integer multiple of 3 }
+\item B = { $x \in \mathbb{Z}$: $x$ is a perfect square }
+\item C = { 4, 5, 9, 10 }
+\item D = { 2, 4, 11, 14 }
+\item E = { 3, 6, 9 }
+\item F = { 4, 6, 16 }
+\end{description}
+An integer x is a perfect square if there is an integer y such that x = y2.\\
+\break
+(a) 15 $\subset$ A is \textbf{False} \\
+15 is an element of A, not a subset.\\
+\break
+(b) \{15\} $\subset$ A is \textbf{True} \\
+Since A is the set of all integer multiples of 3, a set containing 15 is a subset of A.\\
+\break
+(c) $\emptyset \subset$ A is \textbf{True} \\
+The null set is a proper subset of all sets, given that it is an empty set.\\
+\break
+(d) A $\subseteq$ A is \textbf{True} \\
+Although sets are not proper subsets of themselves, they are subsets of themselves.\\
+\break
+(e) $\emptyset \in$ B is \textbf{False} \\
+Set B does not contain an empty set as an element. \\
+\break
+\noindent \textbf{Exercise 3.1.5: Expressing sets in set builder notation.}\\
+Express each set using set builder notation. Then if the set is finite, give its cardinality. Otherwise, indicate that the set is infinite.\\
+\break
+(b) \{ 3, 6, 9, 12, .... \} = \\\textbf{\{$x \in \mathbb{Z}^+: x$ is an integer multiple of 3\}}\\
+\textbf{The set is infinite.}\\
+\break
+(d) \{ 0, 10, 20, 30, ...., 1000 \} = \\\textbf{\{$x \in \mathbb{Z}: 0 \leq x \leq 1000$ and is an integer multiple of 10\}}\\
+\textbf{The cardinality of the set is 101.}\\
+
+\newpage
+\noindent \textbf{Exercise 3.2.1: Sets of sets - true or false.}\\
+Let X = \{1, \{1\}, \{1, 2\}, 2, \{3\}, 4 \}. Which statements are true?\\
+\break
+(a) 2 $\in$ X is \textbf{True}\\
+2 is an element of X, therefore the statement is true.\\
+\break
+(b) \{2\} $\subseteq$ X is \textbf{True}\\
+Since 2 is an element of X, the set containing 2 is a subset of X, therefore the statement is true.\\
+\break
+(c) \{2\} $\in$ X is \textbf{False}\\
+Set X does not contain the element \{2\}, therefore this statement is false. \\
+\break
+(d) 3 $\in$ X is \textbf{False}\\
+Set X does not contain the element 3, therefore this statement is false.\\
+\break
+(e) \{1, 2\} $\in$ X is \textbf{True}\\
+Set X does contain the set \{1, 2\} as an element, therefore the statement is true.\\
+\break
+(f) \{1, 2\} $\subseteq$ X is \textbf{True}\\
+Set X does contain the elements 1, and 2, so a set containing both of those elements is a subset of X.\\
+\break
+(g) \{2, 4\} $\subseteq$ X is \textbf{True}\\
+Set X does contain the elements 2, and 4, so a set containing both of those elements is a subset of X.\\
+\break
+(h) \{2, 4\} $\in$ X is \textbf{False}\\
+Set X contains 2 and 4 as elements, but does not contain the set \{2, 4\} as an element, so the statement is false.\\
+\break
+(i) \{2, 3\} $\subseteq$ X is \textbf{False}\\
+Set X does contain 2, but it does not contain 3 as an element, therefore the set \{2, 3\} is not a subset of X and the statement is false.\\
+\break
+(j) \{2, 3\} $\in$ X is \textbf{False}\\
+Set X does not contain the set \{2, 3\} as an element, therefore the statement is false.\\
+\break
+(k) $|$X$|$ = 7 is \textbf{False}\\
+Set X has 6 unique elements, so the statement is false.\\
+\break
+
+\newpage
+\noindent \textbf{\underline{Question 8:}}\\
+\textbf{Exercise 3.2.4 - A subset of a power set.}\\
+\break
+(b)Let A = \{1, 2, 3\}. What is \{$X \in$ P(A): $2 \in X$\}?\\
+\break
+P(A) =  \{ $\emptyset$, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}\\
+\break
+\{$X \in$ P(A): $2 \in X$\} = \textbf{\{\{2\}, \{1,2\}, \{2,3\}, \{1,2,3\}\}}\\
+\break
+We start by defining the power set of A, and then create a set that meets the condition of 2 being an element of the sets that belong to P(A). In other words, the set contains all elements where X is an element of the power set of set A, and 2 is an element of x.\\
+
+
+
+\newpage
+\noindent \textbf{\underline{Question 9:}}\\
+\textbf{Exercise 3.3.1: Unions and intersections of sets.}\\
+Define the sets A, B, C, and D as follows:
+\begin{description}[noitemsep,topsep=0pt]
+\item A = \{-3, 0, 1, 4, 17\}
+\item B = \{-12, -5, 1, 4, 6\}
+\item C = \{x $\in \mathbb{R}$: x is odd\}
+\item D = \{x $\in \mathbb{R}$: x is positive\}
+\end{description}
+For each of the following set expressions, if the corresponding set is finite, express the set using roster notation. Otherwise, indicate that the set is infinite.\\
+\break
+(c) A $\cap$ C = \textbf{\{-3, 1, 171\}}\\
+Set C contains all real odd numbers, so the intersection of A and C is the set that contains the odd numbers that the two sets have in common.\\
+\break
+(d) A $\cup$ (B $\cap$ C) = \textbf{\{-5, -3, 1, 0, 4, 171\}}\\
+The odd real numbers in Set B are -5, and 1. So the union of that set and set A would be all of the elements in set A with the addition of the elements -5 and 1.\\
+\break
+(e) A $\cap$ B $\cap$ C = \textbf{\{1\}}\\
+The intersection of set A, set B, and set C is the set containing the elements that the three sets have in common. In other words, the odd real numbers that set A and B have in common which is only 1.\\
+\break
+\newpage
+\noindent \textbf{Exercise 3.3.3: Unions and intersections of sequences of sets, part 2.}\\
+Use the following definitions to express each union or intersection given. You can use roster or set builder notation in your responses, but no set operations. \\
+For each definition, i $\in Z^2$.
+\begin{itemize}[noitemsep]
+\item $A_{i} = \{i^0, i^1, i^2\}$
+\item $B_{i} = \{x \in \mathbb{R}: -i \leq x \leq \frac{1}{i}\}$
+\item $C_{i} = \{x \in \mathbb{R}: \frac{-1}{i} \leq x \leq \frac{1}{i}\}$
+\end{itemize}
+(a)$\bigcap\limits_{i=2}^{5}A_{i}$ = \textbf{\{1\}}\\
+Going through the substitutions for $i$, we are given the sets \{1, 2, 4\}, \{1, 3, 9\}, \{1, 4, 16\}, \{1, 5, 25\}. The intersection of these sets is \{1\}.\\
+\break
+(b)$\bigcup\limits_{i=2}^{5}A_{i}$ = \textbf{\{1,2, 3, 4, 5, 9, 16, 25\}}\\
+Going through the substitutions for $i$, we are given the sets \{1, 2, 4\}, \{1, 3, 9\}, \{1, 4, 16\}, \{1, 5, 25\}. The union of these sets is \{1, 1, 1, 1, 2, 3, 4, 4, 5, 9, 16, 25\}.\\
+\break
+(e)$\bigcap\limits_{i=1}^{100}C_{i}$ = \textbf{\{$x \in \mathbb{R}: -\frac{1}{100} \leq x \leq \frac{1}{100}$\}}\\
+Going through the substitions for $i$, since we're combining the elements we can just consider the instances that yield the smallest magnitude for the limits, which is $i=100$.\\
+\break
+(f)$\bigcup\limits_{i=1}^{100}C_{i}$ = \textbf{\{$x \in \mathbb{R}: -1 \leq x \leq 1$\}}\\
+Going through the substitions for $i$, since we're combining the elements we can just consider the instances that yield the highest magnitude for the limits, which is $i=1$.\\
+\break
+\newpage
+\noindent\textbf{Exercise 3.3.4: Power sets and set operations.}\\
+Use the set definitions A = \{a, b\} and B = \{b, c\} to express each set below. Use roster notation in your solutions.\\
+\break
+(b) P(A $\cup$ B) = \textbf{\{$\emptyset$ \{a\}, \{b\}, \{c\}, \{a, b\}, \{a, c\}, \{b, c\}, \{a, b, c\}}\\
+\begin{align*}
+A \cup B &= \{a, b, c\}\\
+P(\{a, b, c\}) &= \{\emptyset, \{a\}, \{b\}, \{c\}, \{a, b\}, \{a, c\}, \{b, c\}, \{a, b, c\}\}\\
+\end{align*}
+The power set of a set contains the null set, the elements of the original set, as well as sets containing every possible combination of elements. In this case we first needed to find A $\cup$ B and then find the power set of that set.\\
+\break
+(d) P(A) $\cup$ P(B) = \textbf{\{$\emptyset$, \{a\}, \{b\}, \{c\}, \{a, b\}, \{b, c\}\}}\\
+\begin{align*}
+P(A) &= \{\emptyset, \{a\}, \{b\}, \{a, b\}\}\\
+P(B) &= \{\emptyset, \{b\}, \{c\}, \{b, c\}\}\}\\
+P(A) \cup P(B) &= \{\emptyset, \{a\}, \{b\}, \{c\}, \{a, b\}, \{b, c\}\}\\
+\end{align*}
+The power set of a set contains the null set, the elements of the original set, as well as sets containing every possible combination of elements. In this case we first needed to find the power set of set A, and then the power set of set B. Then we combined the sets for the final answer.\\
+\newpage
+\noindent \textbf{\underline{Question 10:}}\\
+\textbf{Exercise 3.5.1: Cartesian product of three small sets.}\\
+The sets A, B, and C are defined as follows:
+\begin{description}[noitemsep]
+\item A = \{tall, grande, venti\}
+\item B = \{foam, no-foam\}
+\item C = \{non-fat, whole\}
+\end{description}
+Use the definitions for A, B, and C to answer the questions. Express the elements using n-tuple notation, not string notation.\\
+\break
+(b) Write an element from the set B $\times$ A $\times$ C.\\
+\break
+\centerline{\textbf{(no-foam, Grande, whole)}}\\
+\break
+An element from set B $\times$ A $\times$ C should be an ordered triple where the components are elements from set B, A, and C respectively.\\
+\break
+(c) Write the set B $\times$ C using roster notation.\\
+\break
+\centerline{\textbf{\{(foam, non-fat), (foam, whole), (no-foam, non-fat), (no foam, whole)\}}}\\
+\break
+The roaster notation for B $\times$ C should contain ordered pairs starting with an element in set B paired with each of the elements in set C.\\
+\break
+\newpage
+\noindent\textbf{Exercise 3.5.3: Cartesian product - true or false.}\\
+Indicate which of the following statements are true.\\
+\break
+(b) $\mathbb{Z}^2 \subseteq \mathbb{R}^2$\\
+\centerline{\textbf{True}}\\
+The set of $\mathbb{Z}^2$ should contain ordered pairs of integers. Since these ordered pairs are also real numbers, it logically follows that it would be a subset of $\mathbb{R}^2$.\\
+\break
+(c) $\mathbb{Z}^2 \cap \mathbb{Z}^3$ = $\emptyset$\\
+\centerline{\textbf{True}}\\
+The first set contains ordered pairs, while the second set contains ordered triples. So these sets should not have any elements in common, therefore the intersection of the two will be an empty set.\\
+\break
+(e) For any three sets, A, B, and C, if A $\subseteq$ B, then A $times$ C $\subseteq$ B $times$ C.\\
+\centerline{\textbf{True}}\\
+Since A is a subset of B, all of the elements of A $\times$ C should also be elements of B $\times$ C.\\
+\break
+\noindent\textbf{Exercise 3.5.6: Roster notation for sets defined using set builder notation and the Cartesian product.}\\
+Express the following sets using the roster method. \\
+Express the elements as strings, not n-tuples.\\
+\break
+(d) \{xy: where x $\in$ \{0\} $\cup$ \{0\}$^2$ and y $\in$ \{1\} $\cup$ \{1\}$^2$\}\\
+\break
+\centerline{\{0\} $\cup$ \{0\}$^2$ = \{0, 00\}}\\
+\centerline{\{1\} $\cup$ \{1\}$^2$ = \{1, 11\}}\\
+\centerline{\{0, 00\} $\times$ \{1, 11\} = \textbf{\{01, 011, 001, 0011\}}}\\
+\break
+(e) \{xy: x $\in$ \{aa, ab\} and y $\in$ \{a\} $\cup$ \{a\}$^2$\}\\
+\break
+\centerline{\{a\} $\cup$ \{a\}$^2$ = \{a, aa\}}\\
+\centerline{\{aa, ab\} $\times$ \{a, aa\} = \textbf{\{aaa, aaaa, aba, abaa\}}}\\
+\break
+
+
+
+\newpage
+\noindent\textbf{Exercise 3.5.7: Cartesian products, power sets, and set operations.}\\
+Use the following set definitions to specify each set in roster notation. Except where noted, express elements of Cartesian products as strings.
+\begin{itemize}[noitemsep]
+\item A = \{a\}
+\item B = \{b, c\}
+\item C = \{a, b, d\}
+\end{itemize}
+(c) (A $\times$ B) $\cup$ (A $\times$ C)\\
+\break
+\centerline{A $\times$ B = \{ab, ac\}}\\
+\centerline{A $\times$ C = \{aa, ab, ad\}}\\
+\centerline{(A $\times$ B) $\cup$ (A $\times$ C) = \textbf{\{aa, ab, ac, ad\}}}\\
+\break
+(f) P(A $\times$ B)\\
+\break
+\centerline{A $\times$ B = \{ab, ac\}}\\
+\centerline{P(A $\times$ B) = \textbf{\{$\emptyset$, \{ab\}, \{ac\}, \{ab, ac\}\}}}\\
+\break
+(g) P(A) $\times$ P(B). Use ordered pair notation for elements of the Cartesian product.\\
+\break
+\centerline{P(A) = \{$\emptyset$, \{a\}\}}\\
+\centerline{P(B) = \{$\emptyset$, \{b\}, \{c\}, \{b, c\}\}}\\
+\centerline{P(A) $\times$ P(B) = \textbf{\{($\emptyset$, $\emptyset$), ($\emptyset$, \{b\}), ($\emptyset$, \{c\}), ($\emptyset$, \{b, c\}), (\{a\}, $\emptyset$), (\{a\}, \{b\}), (\{a\}, \{c\}), (\{a\}, \{b, c\})\}}}\\
+\break
+\newpage
+\noindent \textbf{\underline{Question 11:}}\\
+\textbf{Exercise 3.6.2: Proving set identities.}\\
+Use the set identities given in the table to prove the following new identities. Label each step in your proof with the set identity used to establish that step.\\
+\break
+(b) (B $\cup$ A) $\cap$ ($\overline{B}$ $\cup$ A) = A\\
+\begin{align*}
+(B \cup A) \cap (\overline{B} \cup A) &= \quad A\\
+(B \cup A) \cap (A \cup \overline{B}) & \qquad\text{Associative Law}\\
+A \cup (B \cap \overline{B} & \qquad\text{Distributive Law}\\
+A \cup \emptyset & \qquad\text{Complement Law}\\
+A & \qquad\text{Identity Law}\\
+\end{align*}
+(c) $\overline{A \cap \overline{B}} = \overline{A} \cup B$\\
+\begin{align*}
+\overline{A \cap \overline{B}} &= \quad \overline{A} \cup B\\
+\overline{A} \cup \overline{\overline{B}} & \qquad \text{De Morgan's Law}\\
+\overline{A} \cup B & \qquad \text{Double Complement Law}\\
+\end{align*}
+\textbf{Exercise 3.6.3: Showing set equations that are not identities.}\\
+Show that each set equation given below is not a set identity.\\
+\break
+(b) A - (B $\cap$ A) = A\\
+\begin{align*}
+A &= \{1, 2, 3\}\\
+B &= \{2, 3\}\\
+B \cap A &= \{2, 3\}\\
+A - (B \cap A) &= \{1, 2, 3\} - \{2,3\} = \{1\}\\
+A &\neq \{1\}\\
+\end{align*}
+Since the resulting set is not equal to A, we know that the set equation is not a set identity.\\
+\newpage
+(d) (B - A) $\cup$ A = A\\
+\begin{align*}
+B &= \{1, 5\}\\
+A &= \{1\}\\
+B - A &= \{1, 5\} - \{1\} = \{5\}\\
+(B - A) \cup A &= \{5\} \cup \{1\} = \{1, 5\}\\
+A &\neq \{1, 5\}\\
+\end{align*}
+Since the resulting set is not equal to A, we know that the set equation is not a set identity.\\
+\break
+\textbf{Exercise 3.6.4: Proving set identities with the set difference operation.}\\
+Use the set subtraction law as well as the other set identities given in the table to prove each of the following new identities.\\
+\break
+(b) A $\cap$ (B - A) = $\emptyset$\\
+\begin{align*}
+A \cap (B - A) &\\
+A \cap (B \cap \overline{A}) & \quad \text{Set Subtraction Law}\\
+A \cap (\overline{A} \cap B) & \quad \text{Commutative Law}\\
+(A \cap \overline{A}) \cap B & \quad \text{Associative Law}\\
+\emptyset \cap B & \quad \text{Complement Law}\\
+\emptyset & \quad \text{Domination Law}\\
+\end{align*}
+\break
+(c) A $\cup$ (B - A) = A $\cup$ B\\
+\begin{align*}
+A \cup (B - A) &\\
+A \cup (B \cap \overline{A}) & \quad \text{Set Subtraction Law}\\
+(A \cup B) \cap (A \cup \overline{A}) & \quad \text{Distributive Law}\\
+(A \cup B) \cap (U) & \quad \text{Complement Law}\\
+A \cup B & \quad \text{Identity Law}\\
+\end{align*}
+\break
+\end{document}
