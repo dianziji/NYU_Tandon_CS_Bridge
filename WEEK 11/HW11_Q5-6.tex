@@ -1,0 +1,187 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{blkarray, bigstrut}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{array,mathtools}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\newcommand*{\carry}[1][1]{\overset{#1}}
+\newcolumntype{B}[1]{r*{#1}{@{\,}r}}
+\sisetup{
+  exponent-product=\cdot,
+  tight-spacing,
+  per-mode=symbol,
+}
+
+
+\title{\textbf{Homework 8}}
+\author{Oscar Ramirez}
+\date{July 22 2022}
+
+\begin{document}
+\begin{titlepage}   
+
+    \raggedleft % Right align the title page
+
+    \rule{1pt}{\textheight} % Vertical line
+    \hspace{0.05\textwidth} % White space between the vertical line and title page text
+    \parbox[b]{0.75\textwidth}{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+        {\large\textit{}}\\[4\baselineskip]
+
+        {\Huge\bfseries Homework 11}\\[2\baselineskip] % Title
+
+        {\Large\textsc{Oscar Ramirez}} % Author name, lower case for consistent small caps
+
+        \vspace{0.47\textheight} % Whitespace between the title block and the publisher
+        {\noindent Questions 5 - 6}\\[0.1\baselineskip]
+        {\noindent NYU Tandon CS Extended Bridge Summer 2022}\\[0.1\baselineskip]
+        {\noindent NetID: or2092}\\[\baselineskip]
+    }
+
+\end{titlepage}
+\newpage\noindent \textbf{\underline{Question 5:}}\\
+\break
+\textbf{a)} \textbf{Theorem:} For any positive integer $n$, $3$ divides $n^3 + 2n$\\
+\break
+\textbf{\underline{Proof:}}\\\
+\break
+\textbf{Base Case:}\\
+$n = 1$\\
+$n^3 + 2n = (1)^3 + 2(1) = 1 + 2 = 3$\\
+$\text{3 is evenly divisible by 3. Base case is true.}$\\
+\break
+\textbf{Inductive Step:}\\
+For any $k \geq 2$, if $k^3 + 2k = 3m$, for some integer m, then $(k + 1)^3 + 2(k + 1) = 3m$.
+\begin{align*}
+3m &= (k + 1)^3 + 2(k + 1)\\
+&= k(k^2 + 2k + 1) + (k^2 + 2k + 1) + 2k + 2 &\text{Algebra}\\
+&= k^3 + 3k^2 + 3k + 2k + 3 &\text{Algebra}\\
+&= (k^3 + 2k) + 3k^2 + 3k + 3 &\text{Algebra}\\
+&= (3j) + 3k^2 + 3k + 3 &\text{Inductive hypothesis}\\
+&= 3(j + k^2 + k + 1) &\text{Algebra}\\
+\end{align*}
+\indent Since j and k are integers, then $(j + k^2 + k + 1)$ is also an integer, therfore $3(j + k^2 + k + 1)$ is evenly divisible by 3. $\blacksquare$\\
+\newpage\noindent \textbf{b)}\textbf{Theorem:} For any positive integer $n \geq 2$, $n$ can be written as a product of primes.\\
+\break
+\textbf{\underline{Proof:}}\\
+\break
+\textbf{Base Case:}\\
+$n = 2$\\
+$n$ can be written as $2 \cdot 1$, and is therefore a product of a prime number, as requested.\\
+\break
+\textbf{Inductive Step:}\\
+\indent Assuming that $k \geq 2$, any integer j in the range from 2 through k can be expressed as a product of prime numbers. We will show that k + 1 can be expressed as a product of prime numbers.\\
+\break
+\indent We have two cases, which are when $(k + 1)$ is a prime number, and when $(k + 1)$ is a composite number. In the case that $(k + 1)$ is a prime number, then it is a product of one prime number, $(k + 1)$. If $k+1$ is composite, it can be expressed as the product of two integers, $a$ and $b$ such that $a \geq 2$ and $b \geq 2$.\\
+\indent Now we need to show that both a and b fall within the range $[j,k]$Since $(k + 1) = a \cdot b$, we can say that $a = \frac{(k + 1)}{b}$. Since $ b \geq 2$, we know that $a \leq k$ and is within the range $[j, k]$. The same can be said for $b$ knowing that $b = \frac{(k+1)}{a}$ and $a \geq 2$. So, by the inductive hypothesis we can also say that $a$ and $b$ can be written as the product of a prime number, and therefore $(k+1)$ can be written as the product of a prime number. $\blacksquare$\\
+\newpage\noindent \textbf{\underline{Question 6:}}\\
+\break
+\noindent \textbf{\underline{Exercise 7.4.1:}}\\
+\break
+\textbf{a)}\\
+\begin{align*}
+P(n) = \sum_{j=1}^{n}j^2 &= \frac{n(n + 1)(2n + 1)}{6}\\
+P(3) = (1)^2\cdot(2)^2\cdot(3)^2 &= \frac{(3)(3 + 1)(2(3) + 1)}{6} \\
+(1) + (4) + (9) &= \frac{(3)(4)(7)}{6}\\
+14 &= 14\\
+\end{align*}
+\indent P(3) is true.\\
+\break
+\textbf{b)}\\
+\break
+\[P(k) = \sum_{j=1}^{k}j^2 = \frac{k(k + 1)(2k + 1)}{6}\]
+\break
+\textbf{c)}\\
+\[P(k+1) = \sum_{j=1}^{k+1}j^2 = \frac{(k+1)(k + 2)(2k + 3)}{6}\]
+\break
+\textbf{d)}\\
+\break
+\indent What must be proven is that $n = 1$ is true.\\
+\break
+\textbf{e)}\\
+\break
+\indent The inductive step is would state that for any positive integer k, if P(k) is true, then P(k+1) is also true.\\
+\break
+\textbf{f)}\\
+\break
+\indent The inductive hypothesis in the inductive step from my previous answer is $P(k) = \sum_{j=1}^{k}j^2 = \frac{k(k + 1)(2k + 1)}{6}$.\\
+\break
+\newpage\noindent\textbf{g)}\\
+\break
+\noindent\textbf{Theorem:} For every positive integer k, $\sum_{j=1}^{k}j^2 = \frac{k(k + 1)(2k + 1)}{6}$\\
+\break
+\noindent\textbf{\underline{Proof:}}\\
+\break
+\noindent\textbf{Base Case:}
+$P(1) = (1)^2 = \frac{(1)((1) + 1)(2(1) + 1)}{6}$
+$1 = \frac{1(2)(3)}{6} = \frac{6}{6}$
+$1 = 1$
+$n = 1$ is true.\\
+\break
+\noindent\textbf{Inductive Step:} For every positive integer k, assuming $\sum_{j=1}^{k}j^2 = \frac{k(k + 1)(2k + 1)}{6}$, we will show that $\sum_{j=1}^{k+1}j^2 = \frac{(k+1)(k + 2)(2k + 3)}{6}$.
+\begin{align*}
+\textbf{Preliminary calculation (simplifying):}\\
+\frac{(k+1)(k+2)(2k+3)}{6} &= \frac{(k)(2k^2 + 3k + 4k + 6) + (2k^2 + 3k + 4k + 6)}{6}\\
+&= \frac{2k^3 + 3k^2 + 4k^2 + 6k + 2k^2 + 3k + 4k + 6}{6}\\
+&= \frac{2k^3 + 9k^2 + 13k + 6}{6}\\
+\\
+\text{1. Algebra}  \qquad& \quad\sum_{j=1}^{k+1}j^2 \quad = \sum_{j=1}^{k}j^2 + (k+1)^2\\
+\text{2. Inductive Hypothesis} \qquad &= (\frac{k(k + 1)(2k + 1)}{6}) + \frac{6((k+1)^2)}{6}\\
+\text{3. Algebra} \qquad &= \frac{k(2k^2 + k + 2k + 1) + 6k^2 + 12k + 6}{6}\\
+\text{4. Algebra} \qquad &= \frac{2k^3 + k^2 + 2k^2 + k + 6k^2 + 12k + 6}{6}\\
+\text{5. Algebra} \qquad &= \frac{2k^3 + 9k^2 + 13k + 6}{6} \quad\blacksquare\\
+\end{align*}
+\indent I simplified P(k+1) as extra insurance since I wouldn't have been able to factor out (k+1)(k+2) after everything is simplified.\\
+\break
+\newpage\noindent \textbf{\underline{Exercise 7.4.3:}}\\
+\textbf{c)}\\
+\noindent\textbf{Theorem:} For $n \geq 1$, $\sum_{j=1}^{n}\frac{1}{j^2} \leq 2 - \frac{1}{n}$\\
+\break
+\noindent\textbf{\underline{Proof:}}\\
+\break
+\textbf{Base Case:}
+\[\text{For} n = 1\text{, } \sum_{j=1}^{1}\frac{1}{j^2} = \frac{1}{(1)^2} \leq 2 - \frac{1}{(1)}\]
+\[1 \leq 1\]
+$n = 1$ is true.\\
+\break
+\noindent\textbf{Inductive Step:}\\
+ Assuming $\sum_{j=1}^{k}\frac{1}{j^2}\leq 2 - \frac{1}{k}$ for any $k \geq 1$, we will show that $\sum_{j=1}^{k+1}\frac{1}{j^2}\leq 2 - \frac{1}{k+1}$\\
+\[\sum_{j=1}^{k+1}\frac{1}{j^2} = \sum_{j=1}^{k}\frac{1}{j^2} + \frac{1}{(k+1)^2} = (2 - \frac{1}{k}) + \frac{1}{(k+1)^2}\]
+\[\text{Since } k \geq 1 \text{, } \frac{1}{(k+1)^2} \leq \frac{1}{k(k+1)} : \quad 2 - \frac{1}{k} + \frac{1}{(k+1)^2} \leq 2 - \frac{1}{k} + \frac{1}{(k)(k+1)}\]
+\[(\sum_{j=1}^{k+1}\frac{1}{j^2}) \leq 2 - \frac{1}{k} + \frac{1}{(k)(k+1)}\]
+\[\sum_{j=1}^{k+1}\frac{1}{j^2} \leq 2 - \frac{(k + 1)}{(k)(k + 1)} + \frac{1}{(k)(k+1)}\]
+\[\sum_{j=1}^{k+1}\frac{1}{j^2} \leq 2 + \frac{1 - (k + 1)}{(k)(k + 1)}\]  
+\[\sum_{j=1}^{k+1}\frac{1}{j^2} \leq 2 + \frac{1 - k - 1 }{(k)(k + 1)}\]  
+\[\sum_{j=1}^{k+1}\frac{1}{j^2} \leq 2 + \frac{-k}{(k)(k + 1)}\]
+\[\sum_{j=1}^{k+1}\frac{1}{j^2} \leq 2 + \frac{-1}{(k + 1)}\] 
+\[\sum_{j=1}^{k+1}\frac{1}{j^2} \leq 2 - \frac{1}{k + 1}\]
+Therefore, $\sum_{j=1}^{k+1}\frac{1}{j^2}\leq 2 - \frac{1}{k+1}$. $\quad\blacksquare$\\
+\break
+\newpage\noindent \textbf{\underline{Exercise 7.5.1:}}\\
+\break
+\textbf{a)}\\
+Base Case:
+Inductive Step:
+Assuming that for any $n \geq 1$, $3^{2k} - 1 = 4m$ for some integer m, we will show that $3^{2(k+1)} - 1 = 4m$.\\
+\begin{align*}
+4m &= 3^{2k} - 1\\
+4m + 1 &= 3^{2k}\\
+\\
+\text{1. Algebra}\ \quad 3^{2(k+1)} - 1 &= 3^{2k+2} - 1\\
+\text{2. Algebra} \qquad\quad\quad\quad\quad &= 3^2 \cdot 3^{2k} - 1\\
+\text{3. Inductive Hypothesis} \qquad\quad\quad\quad\quad &= 9\cdot (4m + 1) - 1\\
+\text{4. Algebra} \qquad\quad\quad\quad\quad &= 36m + 8\\
+\text{5. Algebra} \qquad\quad\quad\quad\quad &= 4(9m + 2) \quad\blacksquare
+\end{align*}
+Since $m$ is an integer, $(9m + 2)$ is also an integer. Since $3^{2(k+1)} - 1$ can be represented as the product of 4 and some integer, it is evenly divisible by 4.\\
+\break
+\end{document}

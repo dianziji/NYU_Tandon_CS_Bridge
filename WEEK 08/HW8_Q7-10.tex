@@ -1,0 +1,195 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{blkarray, bigstrut}
+\usepackage{array}
+\usepackage{lmodern}
+\usepackage{array,mathtools}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\newcommand*{\carry}[1][1]{\overset{#1}}
+\newcolumntype{B}[1]{r*{#1}{@{\,}r}}
+\sisetup{
+  exponent-product=\cdot,
+  tight-spacing,
+  per-mode=symbol,
+}
+
+
+\title{\textbf{Homework 8}}
+\author{Oscar Ramirez}
+\date{July 22 2022}
+
+\begin{document}
+\begin{titlepage}   
+
+    \raggedleft % Right align the title page
+
+    \rule{1pt}{\textheight} % Vertical line
+    \hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+    \parbox[b]{0.75\textwidth}{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+        {\large\textit{}}\\[4\baselineskip]
+
+        {\Huge\bfseries Homework 8}\\[2\baselineskip] % Title
+
+        {\Large\textsc{Oscar Ramirez}} % Author name, lower case for consistent small caps
+
+        \vspace{0.47\textheight} % Whitespace between the title block and the publisher
+        {\noindent Questions 7 - 10}\\[0.1\baselineskip]
+        {\noindent NYU Tandon CS Extended Bridge Summer 2022}\\[0.1\baselineskip]
+        {\noindent NetID: or2092}\\[\baselineskip]
+    }
+
+\end{titlepage}
+\newpage\noindent \textbf{\underline{Question 7:}}\\
+\break
+\textbf{\underline{Exercise 6.1.5}}\\
+\break
+\textbf{b)}\\
+\[\frac{13 \cdot \binom{12}{2}\binom{4}{3}\cdot 4^2}{\binom{52}{5}}\]
+\indent We're choosing 3 different ranks, 3 for the first, and 1 for the other two. X choose 1 simplifies to X. Then dividing that by total outcomes.\\
+\break
+\textbf{c)}\\
+\[\frac{4 \cdot\binom{13}{5}}{\binom{52}{5}}\]
+\indent We're choosing one suit out of 4, and looking at the number of ways we can choose 5 cards from that suit. Then dividing by total outcomes.\\
+\break
+\textbf{d)}\\
+\[\frac{13 \cdot \binom{4}{2}\binom{12}{3}\cdot 4^3}{\binom{52}{5}}\]
+\indent From 4 different ranks out of 13, finding a pair for the first rank (13C1)(4C2), and then a single card out of the remaining 3 (12C3)(3)(4C1). 4 choose 1 simplifies to 4, hence $4^3$.\\
+\break
+\textbf{\underline{Exercise 6.2.4}}\\
+\break
+\textbf{a)}\\
+\[1 - \frac{\binom{39}{5}}{\binom{52}{5}}\]
+\indent First we find the probability of no clubs. So out of the 52-13 remaining cards, we're choosing 5. Then we're dividing by the total outcomes, and subtracting that from 1.\\
+\break
+\textbf{b)}\\
+\[1 - \frac{\binom{13}{5}\cdot4^5}{\binom{52}{5}}\]
+First we find a hand that has no 2 cards of the same rank. So out of 13 ranks, we're choosing 5, and from each rank we're choosing 1 suit. Then we're dividing by the total outcomes and subtracting that from 1.\\
+\break
+\textbf{c)}\\
+\[\frac{2\cdot\binom{13}{1}\binom{39}{4} - 13^2 \cdot \binom{26}{3}}{\binom{52}{5}}\]
+\indent First, we know that the two events are not mutually exclusive, so after finding the probability of event 1 and event 2 (which are the same), we need to subtract the interjection of the two.\\
+\break
+\textbf{d)}\\
+\[1 - \frac{\binom{26}{5}}{\binom{52}{5}}\]
+By complement, the probability of the hand with no clubs, or spades, is 1 - 26 choose 5.\\
+\newpage\noindent\textbf{\underline{Question 8:}}\\
+\break
+\textbf{\underline{Exercise 6.3.2}}\\
+\textbf{a)}\\
+\[P(A) = \frac{1}{7} \qquad P(B) = \frac{1}{2} \quad P(C) = \frac{1}{42}\]
+\indent For $P(A)$ we know that one of the values has a predetermined position, so we're only considering the other 6 elements. $\frac{6!}{7!} = \frac{1}{7}$.\\
+\break
+\indent For $P(B)$ we're know that half of the permutations will have b on the right of c, and the other half will have b on the left of c, so half of the total outcomes is $\frac{7!}{2}$. Dividing by total orders gives $\frac{7!}{2\cdot7!} = \frac{1}{2}$.\\
+\break
+For $P(C)$ we count "def" as a group and find the order with $5!$, so $\frac{5!}{7!} = \frac{1}{7\cdot6} = \frac{1}{42}$.\\
+\break
+\textbf{b)}\\
+\[P(A|C) = \frac{1}{10}\]
+\indent Total outcomes given C is $5!$. $A \cap C = 2\cdot3!$. $P(A|C) = \frac{12}{120} = \frac{1}{10}$.\\
+\break
+\textbf{c)}\\
+\[P(B|C) = \frac{1}{2}\]
+\indent Total outcomes given C is $5!$. Total orders of B will be half of the total orders given C, which is $\frac{5!}{2}$. So, $\frac{5!}{2\cdot5!} = \frac{1}{2}$.\\
+\break
+\textbf{d)}\\
+\[P(A|B) = \frac{1}{7}\]
+\indent Given that C has to appear to the right of B, and that B is in the middle, we can find 3 possible positions for C, and find the order of the remaining elements with $5!$. B has a total of $\frac{7!}{2}$ permutations. So, $\frac{3\cdot5!}{\frac{7!}{2}} = \frac{6\cdot5!}{7!} = \frac{6!}{7!} = \frac{1}{7}$.\\
+\break
+\newpage\noindent
+\textbf{e)}\\
+Using the following conditions:
+\begin{align*}
+\mathbf{1)}& \quad p(E|F) = \frac{p(E\cap F)}{p(F)} = p(E)\\
+\mathbf{2)}& \quad p(E \cap F) = p(E) \cdot p(F) \\
+\mathbf{3)}& \quad p(F|E) = \frac{p(E \cap F)}{p(E)} = p(F)\\
+\end{align*}
+\indent We can say that A and B are independent because $p(A|F) = \frac{p(A\cap B)}{p(B)} = p(A) = \frac{1}{7}$. We can also say that B and C are independent because $p(E|F) = \frac{p(B\cap C)}{p(C)} = p(B) = \frac{1}{2}$. However, A and C are not independent.\\
+\break
+\textbf{\underline{Exercise 6.3.6}}\\
+\break
+\textbf{b)}\\
+\[\left( \frac{1}{3}\right)^5 \left(\frac{2}{3}\right) ^5\]
+\break
+\textbf{c)}\\
+\[\left( \frac{1}{3}\right) \left(\frac{2}{3}\right) ^9\]
+\break
+\textbf{\underline{Exercise 6.4.2}}\\
+\break
+\textbf{a)}\\
+\[\mathbf{\frac{(\frac{1}{6})^6\cdot (\frac{1}{2})}{(\frac{1}{6})^6\cdot (\frac{1}{2}) + (\frac{3}{20})^4 (\frac{5}{20})^2\cdot (\frac{1}{2})}} \approx 40.38\% \text{ chance that the die is fair.}\]
+\indent We know that the chances of choosing either die is $\frac{1}{2}$, so $P(A) = P(B) = \frac{1}{2}$, but more importantly, P(B) can be substituted for $P(\bar{A})$ since if A is not chosen, then B is chosen. Using the fair die, $P(1|A) = P(2|A) = P(3|A) = P(4|A) = P(5|A) = P(6|A) = \frac{1}{6}$. Using the unfair die, $P(1|B) = P(2|B) = P(3|B) = P(4|B) = P(5|B) = \frac{3}{20}$, but $P(6|B) = \frac{5}{20}$. Since the events are mutually independent, we can find the probability by multiplying the probability of each roll. So using the formula $P(A|"436655") = \frac{P(E|A) \cdot P(A)}{P(E|A) \cdot P(A) + P("436655"|B) \cdot P(B)}$, $P(E|A) = \frac{1}{36}$ and $P(E|B) = \frac{3^4\cdot 5^2}{20^6}$
+\newpage\noindent\textbf{\underline{Question 9:}}\\
+\textbf{\underline{Exercise 6.5.2}}\\
+\break
+\textbf{a)}\\
+\[\text{Range of A} = {0, 1, 2, 3, 4}\]
+\indent There are a total of 4 aces in a deck of cards, so the number of aces that can be dealt to a hand of 5 cards is [0,4]. You can have 1 ace of any suit, 2 aces of any 2 suits, 3 aces of any 3 suits, or all 4 aces from each suit.\\
+\break
+\textbf{b)}\\
+\[\left\{
+    \left(0, \frac{\binom{48}{5}}{\binom{52}{5}}\right),
+    \left(1, \frac{\binom{4}{1}\binom{48}{4}}{\binom{52}{5}}\right),
+    \left(2, \frac{\binom{4}{2}\binom{48}{3}}{\binom{52}{5}}\right),
+    \left(3, \frac{\binom{4}{3}\binom{48}{2}}{\binom{52}{5}}\right),
+    \left(4, \frac{\binom{4}{4}\binom{48}{1}}{\binom{52}{5}}\right)
+\right\}\]
+\indent The distribution would be a set of paired elements, that couple the range with the probability of the range. So the probability of dealing a hand with 0 aces, would be $\frac{\binom{48}{5}}{\binom{52}{5}}$. With each extra ace, we have to pull one extra suit from the same rank, and one less card from the remaining 48.\\
+\break
+\textbf{\underline{Exercise 6.6.1}}\\
+\break
+\textbf{a)}\\
+\[E[G] = 2 \cdot \frac{\binom{7}{2}}{\binom{10}{2}} + 1 \cdot \frac{\binom{7}{1}\binom{3}{1}}{\binom{10}{2}} \mathbf{\approx 1.4}\]
+\indent The probability of choosing two girls can be found by choosing 2 out of the 7, and dividing it by 10 choose 2, for the total number of boys and girls. And then when 1 girl is chosen, 1 boy is chosen, all over the same denominator.\\
+\break
+\textbf{\underline{Exercise 6.6.4}}\\
+\break
+\textbf{a)}\\
+\[E[X] = \frac{(1 + 4 + 9 + 16 + 26 + 36)}{6} = \frac{91}{6} \mathbf{\approx 15.1667}\]
+\indent Since it is a fair die, and the probability for each case is the same, we can just add the squares of the values and divide the sum by 6.\\
+\break
+\newpage\noindent\textbf{b)}\\
+\[E[Y] = 1\cdot\frac{3}{8} + 4\cdot\frac{3}{8} + 9\cdot\frac{1}{8} = \frac{24}{8} \mathbf{= 3}\]
+\indent Since the coin is flipped 3 times, the outcomes would be $$\{(HHH), (HHT), (HTH), (THH), (HTT), (THT), (TTH), (TTT)\}$$ where the range for number of heads is $\{0, 1, 2, 3\}$. The probability of landing 3 heads is 1/8, 2 heads is 3/8, 3 heads is 3/8, and 0 heads is 1/8. And, Y is equal to the number of heads squared. \\
+\break
+\textbf{\underline{Exercise 6.7.4}}\\
+\break
+\textbf{a)}\\
+\[E[C] = \mathbf{1}\]
+Since there are 10 students and coats, the chances that a student will get their coat is 1/10, and the chances that they'll get the coat of another student is 9/10. Since the coat is selected at random 10 times, for constant c = 10, we can find the expected number of children who get their own coat as $10E[C] = 10\cdot \frac{1}{10} = \frac{10}{10} = 1$.\\
+\newpage\noindent\textbf{\underline{Question 10:}}\\
+\textbf{\underline{Exercise 6.8.1}}\\
+\break
+\textbf{a)}\\
+\[\binom{100}{2}(.01^{(2)})(.99^{(98)}) \approx 18.48\%\]
+The probability of a defect is $.01$, so the probability of a defect not being present is $.99$. In this instance $n = 100$ and $k = 2$. So we use the equation $\binom{n}{k}p^k q^{n-k}$.\\
+\break
+\textbf{b)}\\
+\[1 - \binom{100}{1}(.01^1)(.99^{99}) - (.99^{100}) \approx 26.42\%\]
+This can be found by subtracting the instances where there are 0 or 1 defect(s) from 1. $\binom{100}{0}$ and $.01^0$ simplify to 1, so I just excluded it from my final answer.\\
+\break
+\textbf{c)}\\
+\[E[D] = n \cdot p = (100)(.01) = \mathbf{1}\]
+To find the expected number of defects we can use the equation $E[K] = np$ where n is the number of trials and p is the probability of defects.\\ 
+\break
+\textbf{d)}\\
+\[E[D] = n \cdot p = (50)(.02) = \mathbf{1}\]
+\[\binom{50}{1}(.02)(.98^{49}) \approx \mathbf{37.16\%}\]
+The expected number of defects are the same, but the probabilities differ. In the case of section c, the probability is approximately \textbf{.3697}, but in the case of d, the probability is approximately \textbf{.6111}.\\
+\break
+\newpage\noindent\textbf{\underline{Exercise 6.8.3}}\\
+\break
+\textbf{b)}\\
+$1 - (\binom{10}{3}(.3^3) (.7^7) + \binom{10}{2}(.3^2)(.7^8) + (10)(.3)(.7^9) + (.7^{10}))$\\
+$1 - (.64966107184) = .3503892816 \approx \mathbf{35.04\%}$\\
+\break
+Given that the probability of having heads when the coin is biased is .3, we conclude that the coin is biased if there are less than 4 heads. If we represent that probability as p, we could then find the probability of concluding incorrectly using (1 - p). Or we could consider the cases where there are 4, 5, 6, 7, 8, 9, and 10 heads and add them together. But, it would be easier to do the former so we'll do exactly that, using the formula $\binom{n}{k}p^k q^{n-k}$ for each relevant case.\\
+\end{document}
