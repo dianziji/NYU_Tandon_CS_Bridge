@@ -6,10 +6,17 @@
  </p>
 
  <h3 align="left">Language(s):</h3>
+ 
   <p align="left"> 
-   <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> 
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> 
-   </a> 
+  
+   <a href="https://isocpp.org/" target="_blank" rel="noreferrer"> 
+   <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="cplusplus" width="40" height="40"/> 
+   </a>
+   
+   <a href="" target="_blank" rel="noreferrer">
+   <img src="https://cdn-icons-png.flaticon.com/512/5098/5098212.png" alt="tex" width="40" height="40"/>
+   </a>
+   
  </p>
 
 <h2 align = "center" >About the Bridge Program</h2>
