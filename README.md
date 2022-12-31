@@ -13,7 +13,7 @@
    <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="cplusplus" width="40" height="40"/> 
    </a>
    
-   <a href="" target="_blank" rel="noreferrer">
+   <a href="https://www.latex-project.org/" target="_blank" rel="noreferrer">
    <img src="https://cdn-icons-png.flaticon.com/512/5098/5098212.png" alt="tex" width="40" height="40"/>
    </a>
    
